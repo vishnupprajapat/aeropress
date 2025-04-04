@@ -1,0 +1,26 @@
+{
+  "name": "sanity-template-remix-clean",
+  "private": true,
+  "workspaces": [
+    "remix-app",
+    "studio"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=remix-app\" \"npm run dev --workspace=studio\"",
+    "format": "prettier --cache --write .",
+    "build": "npm run build --workspace=remix-app"
+  },
+  "prettier": "@sanity/prettier-config",
+  "devDependencies": {
+    "@sanity/prettier-config": "1.0.3",
+    "concurrently": "9.1.2",
+    "prettier": "3.5.1"
+  },
+  "dependencies": {
+    "groqd": "^1.3.0",
+    "lucide-react": "^0.487.0",
+    "react-icons": "^5.5.0",
+    "swiper": "^11.2.6",
+    "zod": "^3.24.2"
+  }
+}

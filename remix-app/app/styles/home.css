@@ -1,0 +1,1267 @@
+.home-banner {
+  position: relative;
+}
+img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+.home-banner-content {
+  position: absolute;
+  left: 0%;
+  right: 50%;
+  bottom: 50%;
+  padding-left: 40px;
+  padding-right: 40px;
+  transform: translate(0%, 50%);
+}
+h1.banner-heading {
+  margin: 0px;
+  font-size: 60px;
+  line-height: 64px;
+  letter-spacing: 0px;
+  font-family: 'Raleway';
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.home-banner-list ul {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+.home-banner-content-warper {
+  max-width: 680px;
+  margin-left: 24px;
+  width: auto;
+}
+.home-banner-list ul li {
+  padding: 0 0 14px 24px !important;
+  background-image: url('/icon__verified_badge.svg');
+  background-size: 18px 19px;
+  background-repeat: no-repeat;
+  letter-spacing: 0;
+  font-size: 20px;
+  font-weight: 700;
+  background-position: left 2px;
+  text-transform: capitalize;
+  color: #fff;
+  font-family: 'Raleway';
+}
+.button-wrapper {
+  margin-top: 16px;
+  max-width: 328px;
+}
+.button-wrapper a {
+  border-radius: 90px !important;
+  padding: 0 !important;
+  height: 48px;
+  line-height: 49px;
+  letter-spacing: 0;
+  white-space: nowrap;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+  display: block;
+  font-family: 'Raleway';
+  text-align: center;
+  font-size: 18px;
+  text-transform: capitalize;
+  font-weight: 900;
+  text-decoration: none;
+  color: rgb(181, 34, 34);
+}
+.mobile-image {
+  display: none;
+}
+
+/* Product Section */
+.home-featured-collections .container {
+  padding: 32px 64px;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+.section__header {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.home-featured-collections .section__header {
+  margin-bottom: 40px;
+}
+.home-featured-collections h2.heading.h2 {
+  color: #241811;
+  font-family: 'Raleway';
+  font-size: 40px;
+  font-weight: 800;
+  line-height: normal;
+  text-transform: capitalize;
+  letter-spacing: 0;
+}
+.product-list__inner {
+  justify-content: safe center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, calc(100% / 4 - 24px * (4 - 1) / 4));
+  grid-gap: 48px 24px;
+  gap: 48px 24px;
+}
+.featured-collections {
+  padding-bottom: 20px;
+}
+.new-product-item {
+  padding: 0 16px;
+}
+.home-featured-collections .product-item {
+  border-radius: 10px;
+  border: 0.5px solid #e6e7e8;
+  padding: 12px;
+  height: 100%;
+}
+.product-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.product-item__image-wrapper {
+  margin-bottom: 12px;
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+.home-featured-collections .product-item__primary-image,
+.home-featured-collections .product-item__secondary-image {
+  border-radius: 10px;
+  transition:
+    opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
+  cursor: pointer;
+}
+.product-item__secondary-image {
+  position: absolute;
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  -o-object-fit: contain;
+  object-fit: contain;
+  -o-object-position: center;
+  object-position: center;
+}
+.new-product-item .product-item-meta__title {
+  margin: 8px 0;
+}
+.new-product-item .product-item-meta__title {
+  font-family: 'Raleway';
+  font-size: 18px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0;
+  color: rgb(36, 24, 17);
+  text-align: left;
+  text-decoration: none;
+  display: block;
+  font-weight: 800;
+}
+.new-product-item .hidden-phone {
+  text-align: left;
+  color: #666;
+  font-family: 'Raleway';
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  font-style: normal;
+  display: block;
+}
+.product-item-meta__price-list-container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+}
+.new-product-item span.price {
+  margin-top: 8px;
+  color: #241811;
+  font-family: 'Raleway';
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.add-to-cart-btn button {
+  border-radius: 90px !important;
+  height: 44px;
+  padding: 0 !important;
+  line-height: 49px;
+  background: #a30a0a;
+  color: #fffaf6;
+  font-size: 18px;
+  text-transform: capitalize;
+  font-family: 'Raleway';
+  font-weight: 800;
+  border: 0;
+  width: 100%;
+  white-space: nowrap;
+  margin: 0 auto;
+  display: table;
+  margin-top: 20px;
+}
+.product-details__size {
+  gap: 3px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.product_option.color {
+  min-width: inherit;
+  position: relative;
+}
+.product-item-meta {
+  margin-bottom: 20px;
+}
+
+.product-details__size .product_option.color .color {
+  width: 55px;
+  height: 55px !important;
+  margin: 0 auto;
+  overflow: unset;
+  display: block;
+  font-size: 0;
+  padding: 2px !important;
+  border-width: 1px;
+  position: relative;
+  border-color: #fff0;
+}
+.product_option.color .color span.product_option-color-image {
+  background-image: url('https://aeropress.com/cdn/shop/files/Clear_150x150_c00759d7-7ec1-4210-830a-eaa19134b345.png?v=1713403086');
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  margin: 0;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.collection_maker_btn {
+  text-align: center;
+  margin-top: 30px;
+  color: #241811;
+  font-family: 'Raleway';
+  font-weight: 800;
+  font-size: 16px;
+  line-height: normal;
+  text-decoration-line: underline;
+  cursor: pointer;
+}
+/* HomeHowDoTabsSection css */
+
+section.section.home_aeropress_tabs {
+  background-color: #f8f8f8;
+}
+section.section.home_aeropress_tabs .container {
+  padding: 42px 64px 56px;
+}
+section.section.home_aeropress_tabs .section__header {
+  margin-bottom: 32px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.home_aeropress_tabs .section__header h2.heading {
+  line-height: normal;
+  color: #383738;
+  text-transform: capitalize;
+  font-size: 40px;
+  font-family: 'Raleway';
+  font-weight: 900;
+  margin: 0 auto 18px;
+}
+.home_aeropress_tabs ul.tabs {
+  margin: 0 0 32px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  gap: 8px;
+}
+.home_aeropress_tabs ul.tabs li.active {
+  background: #383738;
+  color: #fff;
+  border-color: #383738;
+}
+.home_aeropress_tabs ul.tabs li {
+  border-radius: 90px;
+  border: 0.5px solid #241811;
+  padding: 4px 10px;
+  font-size: 20px;
+  font-family: 'Raleway';
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.home_aeropress_tabs ul.tabs li svg {
+  margin-right: 4px;
+}
+.home_aeropress_tabs ul.tabs li span {
+  line-height: 0.9;
+  margin-top: -4px;
+}
+
+/* how to clean section */
+
+.home-multi-3column {
+  background-color: #f8f8f8;
+}
+.home-multi-3column .container {
+  padding: 40px 64px;
+  max-width: 1100px;
+}
+.home-multi-3column .section__header {
+  margin-bottom: 32px;
+  margin-top: -15px;
+}
+
+.home-multi-3column .heading.h2 {
+  color: #241811;
+  font-family: 'Raleway';
+  font-size: 40px;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: capitalize;
+  letter-spacing: 0;
+}
+
+.multi-column--pocket-medium,
+.multi-column--pocket-large {
+  --section-items-per-row: 1;
+}
+.multi-column__inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: var(--multi-column-row-gap) var(--multi-column-column-gap);
+  gap: var(--multi-column-row-gap) var(--multi-column-column-gap);
+  justify-content: safe center;
+  padding: 0px;
+}
+.home-multi-3column .multi-column__item {
+  padding: 9.6px;
+  background: #fff;
+  border-radius: 12px;
+  height: auto;
+}
+.home-multi-3column .multi-column__image-wrapper {
+  margin-bottom: 19px;
+  margin-left: 0;
+  max-width: 923px;
+}
+.multi-column__image-wrapper {
+  display: block;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: min(8px, 8px);
+  overflow: hidden;
+  z-index: 0;
+}
+.how_to_clean_column img.multi-column__image {
+  height: 213px;
+  object-fit: cover;
+}
+.home-multi-3column .multi-column__image-wrapper img {
+  border-radius: 10px;
+}
+.multi-column__image {
+  width: 100%;
+}
+.home-multi-3column .multi-column__text-container {
+  text-align: left;
+  margin: 0px;
+}
+.home-multi-3column p.heading.h5 {
+  color: #a30a0a;
+  font-family: 'Raleway';
+  font-weight: 800;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+.home-multi-3column .multi-column__text-container p {
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 6px;
+}
+.home-multi-3column .multi-column__text-container {
+  text-align: left;
+}
+
+/* HomeTechnologySection css  */
+
+.section__color-wrapper {
+  background-color: #a30a0a;
+  color: #ffffff;
+}
+.home_technology .container {
+  padding: 59.422px 104.92px 57.499px 104px;
+  max-width: 1200px;
+}
+.technology_grid {
+  display: flex;
+  margin: 0 -23px;
+  align-items: center;
+}
+.technology_left.technology_item {
+  width: 49.1%;
+}
+.technology_item {
+  padding: 0 23px;
+}
+.home_technology .section__header {
+  max-width: 100%;
+  margin-bottom: 17px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.home_technology .section__header h2.heading {
+  color: #fff;
+  line-height: 42px;
+  text-transform: capitalize;
+  font-size: 40px;
+  font-family: 'Raleway';
+  font-weight: 800;
+  margin: 0 auto 20px;
+  letter-spacing: 0;
+  display: block;
+}
+.home_technology .section__header p {
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 500;
+}
+.home_technology .button-wrapper {
+  text-align: center;
+  margin-top: 21px;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.home_technology .button-wrapper .video_popup_btn {
+  font-family: 'Raleway';
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration-line: underline;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.technology_right.technology_item {
+  width: 650px;
+}
+.technology_item {
+  padding: 0 23px;
+}
+.home_technology_block {
+  position: relative;
+}
+.multi-column__image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+.tech-text1 {
+  left: 10%;
+  top: 42.4%;
+  max-width: 100px;
+}
+.technology_text {
+  color: #fff;
+  font-family: 'Raleway';
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28.333px;
+  text-transform: capitalize;
+  position: absolute;
+  cursor: pointer;
+}
+.tech-text1 span {
+  line-height: 20px;
+  margin-bottom: 8px;
+}
+.home_technology .technology_text img {
+  animation: 1.4s ease-in-out infinite playButtonRipplet;
+  border-radius: 100%;
+}
+@keyframes playButtonRipplet {
+  0% {
+    box-shadow:
+      0 0 0 0 #e1e1e1,
+      0 0 0 0 #e1e1e1;
+  }
+  100% {
+    box-shadow:
+      0 0 0 9px #fff0,
+      0 0 0 18px #fff0;
+  }
+}
+.home_technology .technology_text img {
+    width: 45px;
+    display: block;
+}
+.tech-text1:after {
+    width: 100%;
+    background: #fff;
+    transform: rotate(40deg);
+    right: -91%;
+    top: 54%;
+    position: absolute;
+}
+
+.tech-text1:after, .tech-text2:after, .tech-text3:after {
+    height: 1px;
+    display: block;
+    content: "";
+}
+.tech-text2 {
+    right: 10.8%;
+    top: 19.6%;
+    max-width: 100px;
+    text-align: right;
+    line-height: 21.278px;
+}
+.tech-text2:after {
+    background: #fff;
+    width: 110px;
+    transform: rotate(123deg);
+    margin-left: -75%;
+    margin-top: 52%;
+}
+.tech-text3 {
+    right: 7.6%;
+    bottom: 40.4%;
+    width: 135px;
+    text-align: right;
+}
+.tech-text3:after {
+    background: #fff;
+    width: 44px;
+    transform: rotate(140deg);
+    position: absolute;
+    margin-left: -29%;
+    margin-top: 2%;
+}
+
+
+.home-company-rew .container {
+    padding: 56px 0;
+    max-width: 100%;
+}
+.home-company-rew .home-company-rew-warper {
+    display: flex;
+    gap: 0;
+    padding: 0 13px;
+}
+.home-company-rew-warper-item{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    padding: 32px 16px;
+    height: 100%;
+    width: 372px;
+}
+.home-company-rew-warper-item-image{
+    max-width: 152px;
+    margin-bottom: 12px;
+    border-radius: 0;
+    height: 32px;
+    align-items: center;
+    display: flex;
+}
+.home-company-rew-warper-item-image img{
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-style: none;
+    vertical-align: top;
+
+}
+.home-company-rew-warper-item-text{
+    text-align: center;
+}
+.home-company-rew-warper-item-text .heading.h5{
+color: #1d1919;
+font-size: 24px;
+line-height: 27px;
+font-family: 'Raleway';
+font-weight: 800;
+text-transform: capitalize;
+max-width: 100%;
+margin: 0 auto;
+
+}
+
+/* HomeReviewsImagesSection css */
+
+
+section.section.home_reviews_images .section__color-wrapper {
+    background-color: #a30a0a !important;
+}
+.home_reviews_images .section__color-wrapper .container {
+    padding: 40px 64px;
+    max-width: 1440px;
+}
+.home_reviews_images .section__header {
+    margin-bottom: 32px;
+    margin-top: -6px;
+}
+.home_reviews_images .section__header span {
+    font-size: 14px;
+    color: #fff;
+    display: block;
+    margin-bottom: -6.9px;
+}
+.home_reviews_images .section__header h2.heading {
+    letter-spacing: 0;
+    margin: 12px auto !important;
+    color: #fff;
+    line-height: 40px;
+    text-transform: capitalize;
+    font-size: 40px;
+    font-family: 'Raleway';
+    font-weight: 800;
+    max-width: 100%;
+}
+.grid_reviews_images {
+    display: flex;
+}
+.reviews_images_item {
+    width: 336px;
+    padding: 0 16px;
+    position: relative;
+}
+.reviews_images_item img {
+    aspect-ratio: 1 / 0.87;
+    object-fit: cover;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-style: none;
+    vertical-align: top;
+}
+.home_reviews_images .review_title {
+    margin: 0;
+    position: absolute;
+    color: #fff;
+    left: 29px;
+    z-index: 11;
+    bottom: 18px;
+    font-size: 20px;
+    font-family: 'Raleway';
+    font-weight: 800;
+}
+.home_reviews_images .view_review_btn {
+    animation: 1.4s ease-in-out infinite playButtonRippler;
+    border-radius: 100%;
+    right: 29px;
+    bottom: 12px;
+    position: absolute;
+    font-size: 0;
+    cursor: pointer;
+}
+@keyframes playButtonRippler{0%{box-shadow:0 0 0 0 #e1e1e1,0 0 0 0 #e1e1e1}100%{box-shadow:0 0 0 5px #fff0,0 0 0 10px #fff0}}
+.home_reviews_images .view_review_btn svg {
+    padding-bottom: .5px;
+}
+.home_reviews_images .button-wrapper {
+    background-color: #fff;
+    white-space: nowrap;
+    width: 100%;
+    color: #a30a0a !important;
+    font-size: 18px;
+    text-transform: capitalize;
+    display: table;
+    margin: 22px auto 0;
+    font-family: 'Raleway';
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    max-width: 320px;
+    border-radius: 32px;
+    text-align: center;
+    line-height: 50px;
+    height: 48px;
+}
+.home_reviews_images .button-wrapper a {
+    pointer-events: auto;
+    font-size: 16px;
+    color: #a30a0a;
+    text-transform: capitalize;
+}
+
+
+/* HomeWorldwideReviewsSection */
+
+
+
+.home_worldwide_reviews .container {
+    padding: 48px 64px;
+    max-width: 1440px;
+}
+.home_worldwide_reviews .section__header img.multi-column__image {
+    margin: 0 auto;
+    width: 145px;
+    display: block;
+}
+.home_worldwide_reviews .section__header h2.heading {
+    max-width: 340px;
+}
+.home_worldwide_reviews .section__header h2.heading {
+    color: #241811;
+    margin-top: 8px;
+    margin-bottom: 32px !important;
+    line-height: 40px;
+    text-transform: capitalize;
+    font-size: 40px;
+    font-family: 'Raleway';
+    font-weight: 800;
+    margin: 0 auto 19px;
+}
+.worldwide_reviews_grid {
+    position: relative;
+}
+.worldwide_reviews_slider {
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    padding: 0 13px;
+}
+.slider_wrapper {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+  }
+  .slide_item {
+    min-width: 100%;
+  }
+.worldwide_reviews_slider .slide_item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    text-align: center;
+}
+.worldwide_reviews_slider .full-content p {
+    margin: 24px 0 12px !important;
+    display: block;
+    color: #241811;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+    font-family: 'Raleway';
+    font-weight: 800;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    letter-spacing: 0;
+}
+.worldwide_reviews_slider span {
+    color: #666;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    font-family: 'Raleway';
+    font-weight: 500;
+    margin-bottom: 18px;
+    display: block;
+}
+ul.slick_slider_controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin: 24px 0 0;
+    padding: 0;
+}
+.slick_slider_controls .slide-arrow {
+    background: #fff;
+    border-radius: 50%;
+    left: 64px;
+    top: 48.5%;
+    cursor: pointer;
+}
+
+.worldwide_reviews_grid .slick_slider_controls .slide-arrow {
+    left: 13px;
+    top: 47.5%;
+    cursor: pointer;
+}
+.slick_slider_controls li {
+    list-style-type: none;
+    font-size: 0;
+}
+
+
+
+/* blog-recipe-hp css */
+
+.blog-recipe-hp {
+    padding: 40px 0;
+    background-color: #f9f8f7;
+}
+.blog-recipe-hp .container {
+    padding: 0 64px;
+    max-width: 1440px;
+}
+.blog-recipe-hp h2 {
+    font-size: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin-bottom: 32px !important;
+    font-weight: 800;
+    font-family: 'Raleway';
+    text-transform: capitalize;
+}
+h2.mobile-heading {
+    display: none;
+}
+.center-recipe-tab ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.center-recipe-tab ul li {
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+    border-radius: 90px;
+    border: .5px solid #1d1919;
+    padding: 4px 10px;
+    margin: 0 4px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.center-recipe-tab ul li.active {
+    background: #383738;
+    border: .5px solid #383738;
+    color: #fff;
+}
+.svg-recipe {
+    line-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0;
+}
+.center-recipe-tab ul svg {
+    margin-right: 8px;
+}
+.center-recipe-tab ul p {
+    font-size: 16px;
+    line-height: 20px;
+    color: #241811;
+    margin: -2px 0 0;
+}
+.center-recipe-tab ul li.active p {
+    color: #fff;
+}
+
+.bottom-recipe-detail {
+    position: relative;
+}
+.slider-recipe {
+    margin-top: 32px;
+}
+.slider-recipe .recipe_tab_content {
+    padding: 0;
+    list-style: none;
+    margin: 0 -12px;
+    flex-wrap: wrap;
+    display: none;
+}
+.slider-recipe .recipe_tab_content.active {
+    display: block;
+    padding: 0 80px;
+    line-height: 0;
+}
+.border-with-recipe {
+    padding: 0 12px;
+    height: 100%;
+}
+.slide-data-recipe {
+    border-radius: 16px;
+    border: .5px solid #666;
+    background-color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.border-with-recipe img {
+    min-height: 181px;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+    height: auto;
+    max-width: 100%;
+    border-style: none;
+    vertical-align: top;
+}
+.recipe-all-content {
+    padding: 12px 8px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.blog_review {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+}
+.blog_review, .recipe-time {
+    min-height: 20px;
+}
+.blog_review .stars {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.blog_review span, .recipe-time span {
+    line-height: 20px;
+    color: #241811;
+}
+.blog_review .stars span.star {
+    padding: 0 1px;
+    line-height: 13px;
+}
+.star.is-selected svg, .star.is-selected ~ .star svg {
+    fill: #ffd200 !important;
+}
+.border-with-recipe a{
+    text-decoration: none;
+}
+p.recipe-title {
+    font-family: 'Raleway';
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 16px;
+    margin: 0 0 8px;
+    flex: 1;
+    color: #241811;
+}
+p.recipe-desc {
+    font-size: 12px;
+    line-height: 12px;
+    margin: 0 0 8px;
+    color: #666;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.recipe-all-content span.read_more {
+    color: #666;
+    font-size: 12px;
+    line-height: normal;
+    text-decoration-line: underline;
+    text-transform: capitalize;
+}
+.recipe-all-content span.read_more{
+    font-family: 'Raleway';
+    font-weight: 600;
+}
+
+
+
+
+
+
+@media screen and (any-hover: hover) {
+  .product-item__secondary-image {
+    display: block;
+  }
+  .product-item__image-wrapper--multiple:hover .product-item__primary-image {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .product-item__image-wrapper--multiple:hover .product-item__secondary-image {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+@media (max-width: 1200px) {
+  h1.banner-heading {
+    font-size: 40px;
+    line-height: 44px;
+  }
+}
+@media (max-width: 1199px) {
+    .technology_grid {
+        flex-direction: column;
+    }
+    .technology_left.technology_item {
+        width: 100%;
+    }
+    .grid_reviews_images{
+        overflow-x: auto;
+        gap: 16px; /* Adjust spacing between elements */
+        scroll-snap-type: x mandatory;
+    }
+    .reviews_images_item{
+        flex: 0 0 auto; /* Prevent items from shrinking */
+        scroll-snap-align: start;
+    }
+  }
+@media (max-width: 999px) {
+  .product-list__inner {
+    grid-template-columns: repeat(auto-fit, calc(100% / 3 - 24px * (3 - 1) / 3));
+    grid-gap: 32px 24px;
+    gap: 32px 24px;
+  }
+}
+@media (max-width: 1099px) {
+  .home-banner-content {
+    padding-right: 0px;
+  }
+  .home-banner-content-warper {
+    max-width: 1100px;
+  }
+
+}
+@media (max-width: 1023px) {
+  h1.banner-heading {
+    font-size: 34px;
+    line-height: 37px;
+  }
+  .home-multi-3column .heading.h2,
+  .home_aeropress_tabs .section__header h2.heading,
+  .home-featured-collections h2.heading.h2 {
+    font-size: 34px;
+  }
+  .home-company-rew .home-company-rew-warper {
+    overflow-x: auto;
+    gap: 16px; /* Adjust spacing between elements */
+    scroll-snap-type: x mandatory;
+}
+.home-company-rew-warper-item{
+    
+    flex: 0 0 auto; /* Prevent items from shrinking */
+    scroll-snap-align: start;
+}
+
+}
+@media (max-width: 883px) {
+  .button-wrapper a {
+    height: 40px;
+    line-height: 40px;
+  }
+  .button-wrapper {
+    margin-top: 10px;
+  }
+  .home-banner-list ul li {
+    padding: 0 0 8px 24px !important;
+    background-size: 16px 16px;
+    font-size: 16px;
+  }
+  h1.banner-heading {
+    line-height: 34px;
+    margin: 0 0 15px;
+  }
+  .home-banner-content .announcement-bar__message {
+    padding-top: 0px;
+  }
+  .multi-column__inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  .home-company-rew-warper-item{
+    padding: 32px 0px;
+  }
+  .home_reviews_images .button-wrapper {
+    font-size: 16px;
+    position: relative;
+    max-width: 259px;
+    line-height: 39px;
+    height: 35px;
+}
+.add-to-cart-btn button {
+    height: 35px;
+    line-height: 30px;
+    font-size: 16px;
+}
+.technology_grid {
+    margin: 0 40px;
+
+}
+}
+@media (max-width: 767px) {
+  .mobile-image {
+    display: block;
+  }
+  .desktop-image {
+    display: none;
+  }
+  .home-banner-content {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .home-banner-content-warper {
+    margin-left: 0px;
+  }
+  .home-banner-content {
+    right: unset;
+  }
+  .home-banner-content-warper {
+    max-width: 100%;
+  }
+  .announcement-bar__message,
+  .banner-heading,
+  .home-banner-list {
+    text-align: center;
+  }
+  .home-banner-list ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .home-banner-list ul li {
+    display: flex;
+  }
+  .button-wrapper {
+    margin: auto;
+    margin-top: 10px;
+  }
+  footer .container {
+    padding: 38px 30px;
+  }
+  section.section.home_aeropress_tabs .container {
+    padding: 42px 0px 34px;
+  }
+  .product-list__inner {
+    grid-template-columns: repeat(auto-fit, calc(100% / 2 - 12px * (2 - 1) / 2));
+    grid-gap: 32px 12px;
+    gap: 32px 12px;
+  }
+  .home-featured-collections .container {
+    padding: 32px 0px;
+  }
+  .new-product-item .product-item-meta__title {
+    font-size: 14px;
+  }
+  .new-product-item .hidden-phone {
+    font-size: 12px;
+  }
+  .new-product-item .product-item-meta__title {
+    margin: 3px 0;
+  }
+  .new-product-item span.price {
+    margin-top: 2px;
+    font-size: 14px;
+  }
+  .product-item-meta {
+    margin-bottom: 0px;
+  }
+  .add-to-cart-btn button {
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    margin: 11px auto 0;
+  }
+  .featured-collections {
+    padding: 20px;
+  }
+  .home_technology .container {
+    padding: 58.422px 0.92px 57.499px 0px;}
+    .technology_right.technology_item {
+        width: 514px;
+    }
+    .home_reviews_images .section__color-wrapper .container {
+        padding: 40px 0px;
+    }
+    .home_worldwide_reviews .section__header h2.heading {
+        margin-top: 8px;
+        margin-bottom: 10px !important;
+        line-height: 32px;
+        font-size: 30px;
+    }
+    .blog-recipe-hp .container {
+        padding: 0px 10px;
+    }
+    .center-recipe-tab ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+}
+@media (max-width: 576px) {
+  .product_option.color {
+    display: none;
+  }
+  .technology_right.technology_item {
+    width: 415px;
+}
+  .new-product-item {
+    padding: 0 0px;
+  }
+  .home-multi-3column .container {
+    padding: 40px 27px;
+  }
+  .multi-column__inner {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .home_aeropress_tabs ul.tabs li {
+    font-size: 12px;
+  }
+  .home_worldwide_reviews .container {
+    padding: 48px 0px;
+}
+.home_aeropress_tabs ul.tabs{
+    overflow-x: auto;
+    gap: 16px; /* Adjust spacing between elements */
+    scroll-snap-type: x mandatory;
+}
+.tab1,.tab2,.tab3,.tab4{
+    flex: 0 0 auto; /* Prevent items from shrinking */
+    scroll-snap-align: start;
+}
+}
+@media (max-width: 475px) {
+.technology_right.technology_item {
+    width: 290px;
+}
+}
+@media screen and (min-width: 741px) {
+    .multi-column--spacing-normal {
+      --multi-column-row-gap: 40px;
+    }
+  }
+@media screen and (min-width: 1000px) {
+  .multi-column--medium {
+    --section-items-per-row: 4;
+  }
+  .multi-column__image-wrapper {
+    margin-bottom: 24px;
+  }
+  .multi-column--spacing-normal {
+    --multi-column-column-gap: 40px;
+  }
+}
+@media screen and (min-width: 1200px) {
+    .multi-column--medium {
+      --section-items-per-row: 5;
+    }
+  }
+
