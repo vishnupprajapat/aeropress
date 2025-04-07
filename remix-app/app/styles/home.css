@@ -518,7 +518,6 @@ section.section.home_aeropress_tabs .section__header {
 }
 .home_technology .technology_text img {
     width: 45px;
-    display: block;
 }
 .tech-text1:after {
     width: 100%;
@@ -715,7 +714,9 @@ section.section.home_reviews_images .section__color-wrapper {
 
 /* HomeWorldwideReviewsSection */
 
-
+.slick-list {
+  margin: 10px 121px !important;
+}
 
 .home_worldwide_reviews .container {
     padding: 48px 64px;
@@ -983,11 +984,50 @@ p.recipe-desc {
     font-family: 'Raleway';
     font-weight: 600;
 }
+.tag-list-recipe {
+  min-height: 15px;
+}
+.recipe-time, .tag-list-recipe {
+  align-items: center;
+  display: flex;
+  margin-bottom: 5px;
 
+}
+.tag-list-recipe p {
+  font-family: 'Raleway';
+  font-weight: 600;
+}
+img.custom-arrow.next-arrow ,img.custom-arrow.prev-arrow {
+  width: 45px;
+  bottom: 50%;
+}
+img.custom-arrow.prev-arrow {
+  position: absolute;
+  left: 54px;
 
+}
 
+img.custom-arrow.next-arrow {
+  position: absolute;
+  right: 54px;
 
+}
+.tag-list-recipe p {
+  border-radius: 90px;
+  background-color: #383738;
+  font-size: 10px;
+  line-height: 10px;
+  color: #fff;
+  padding: 2px 6px 3px;
+  margin: 0 2px;
+}
 
+.blog_review .review_title {
+  font-size: 12px;
+  color: #757575;
+  padding-left: 6px;
+  font-family: 'Raleway';
+}
 
 @media screen and (any-hover: hover) {
   .product-item__secondary-image {
@@ -1106,11 +1146,27 @@ p.recipe-desc {
     margin: 0 40px;
 
 }
+.home_worldwide_reviews .container {
+  padding: 48px 0px;
+}
+.worldwide_reviews_slider .full-content p {
+  font-size: 18px;
+  line-height: 22px;
+}
 }
 @media (max-width: 767px) {
   .mobile-image {
     display: block;
   }
+  .slick-list {
+    margin: 10px 44px !important;
+}
+img.custom-arrow.next-arrow {
+  right: 0px;
+}
+img.custom-arrow.prev-arrow {
+  left: 0px;
+}
   .desktop-image {
     display: none;
   }

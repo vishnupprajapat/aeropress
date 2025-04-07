@@ -1,6 +1,8 @@
 import React from 'react'
 
-const HomeTechnologySection = () => {
+const HomeTechnologySection = ({TechnologyData}:any) => {
+    const {title,description,ctaText,ctaLink,image,features}=TechnologyData?.data?.technologySection
+    const imageUrl = image?.asset?.url
     return (
         <section className='section home_technology'>
             <div className="section__color-wrapper">
@@ -8,8 +10,8 @@ const HomeTechnologySection = () => {
                     <div className="technology_grid">
                         <div className="technology_left technology_item">
                             <div className="section__header">
-                                <h2 className="heading">Patented 3-in-1 Technology</h2>
-                                <div><p>Our patented design transforms coffee brewing into a quick, portable, and globally embraced experience.</p></div>
+                                <h2 className="heading">{title}</h2>
+                                <div><p>{description}</p></div>
                                 <div className="button-wrapper">
                                     <span className="video_popup_btn">
                                         <svg
@@ -25,7 +27,7 @@ const HomeTechnologySection = () => {
                                                 fill="white"
                                             />
                                         </svg>
-                                        <span>See AeroPress in action</span>
+                                        <span>{ctaText}</span>
                                     </span>
                                 </div>
                             </div>
@@ -33,37 +35,28 @@ const HomeTechnologySection = () => {
                         <div className="technology_right technology_item">
                             <div className="home_technology_block">
                                 <div className="multi-column__image">
-                                    <img src="https://aeropress.com/cdn/shop/files/AeroPress_Clear_Addition_1_605x.png?v=1713417072" alt="AeroPress clear Demo" />
-                                    <div className="tech-text1 technology_text" data-id="technology_tab_modal1">
-                                        <span>Fast immersion</span>
-                                        <img
-                                            src="https://aeropress.com/cdn/shop/files/Frame_5684.svg?v=1709091109"
-                                            width="41px"
-                                            height="41px"
-                                            alt="Fast immersion"
-                                            loading="lazy"
-                                        />
-                                    </div>
-                                    <div className="tech-text2 technology_text" data-id="technology_tab_modal2">
-                                        <img
-                                            src="https://aeropress.com/cdn/shop/files/Air_Pressure.svg?v=1699587036"
-                                            width="41px"
-                                            height="42px"
-                                            alt="Air_Pressure"
-                                            loading="lazy"
-                                        />
-                                        <span>Air Pressure</span>
-                                    </div>
-                                    <div className="tech-text3 technology_text" data-id="technology_tab_modal3">
-                                        <img
-                                            src="https://aeropress.com/cdn/shop/files/Frame_5684_f4e6daeb-2d1c-4b13-a993-a3ba8f02b795.svg?v=1709091115"
-                                            width="41px"
-                                            height="41px"
-                                            alt="Micro-Filtration"
-                                            loading="lazy"
-                                        />
-                                        <span>Micro-Filtration</span>
-                                    </div>
+                                    <img src={imageUrl} alt="AeroPress clear Demo" />
+                                    {features?.map((feature: any, index: number) => {
+                                        const techClass = `tech-text${index + 1}`;
+                                        const dataId = `technology_tab_modal${index + 1}`;
+                                        const iconUrl = feature?.icon?.asset?.url;
+                                        return (
+                                            <div
+                                            key={index}
+                                            className={`${techClass} technology_text`}
+                                            data-id={dataId}
+                                            >
+                                            <span>{feature?.label}</span>
+                                            <img
+                                                src={iconUrl}
+                                                width="41px"
+                                                height="41px"
+                                                alt="Fast immersion"
+                                                loading="lazy"
+                                            />
+                                            </div>
+                                        );
+                                        })}
                                 </div>
                             </div>
                         </div>

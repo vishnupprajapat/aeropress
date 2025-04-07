@@ -17,14 +17,16 @@ import {Suspense, lazy} from 'react'
 import Header from './components/header'
 import Footer from './components/footer';
 import { loadQuery } from './sanity/loader.server';
-import { HEADER_QUERY } from './sanity/queries';
-import { Header as HeaderType } from './sanity/types';
+import { FOOTER_QUERY, HEADER_QUERY, } from './sanity/queries';
+import { Header as HeaderType,  } from './sanity/types';
+import { Footer as FooterType } from './sanity/types';
 import { useQuery } from '@sanity/react-loader';
 
 const LiveVisualEditing = lazy(() => import('~/components/LiveVisualEditing'))
 
 export const loader = async () => {
     const header = await loadQuery<HeaderType[]>(HEADER_QUERY)
+    const footer = await loadQuery<FooterType[]>(FOOTER_QUERY)
   return json({
     ENV: {
       SANITY_STUDIO_PROJECT_ID: process.env.SANITY_STUDIO_PROJECT_ID,
@@ -32,7 +34,8 @@ export const loader = async () => {
       SANITY_STUDIO_URL: process.env.SANITY_STUDIO_URL,
       SANITY_STUDIO_STEGA_ENABLED: process.env.SANITY_STUDIO_STEGA_ENABLED,
     },
-    header, query: HEADER_QUERY, params: {}
+    header, query: HEADER_QUERY, params: {},
+    footer
   })
 }
 
@@ -40,18 +43,20 @@ export const links: LinksFunction = () => {
   return [
     {rel: 'stylesheet', href: styles},
   {rel: 'stylesheet', href: fontStyles},
-  {rel: 'stylesheet', href: homeStyle}
-  ,
+  {rel: 'stylesheet', href: homeStyle},
+
+{ rel: "stylesheet",type:"text/css", href:"https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"},
+{ rel: "stylesheet",type:"text/css", href:"https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"}
   ]
 }
 
 export default function App() {
-  const {ENV,query ,header ,params} = useLoaderData<typeof loader>()
-    const {data, loading, error, encodeDataAttribute} = useQuery<typeof header.data>(query, params, {
+  const {ENV,query ,header ,footer ,params} = useLoaderData<typeof loader>()
+    const {data, loading, error, encodeDataAttribute} = useQuery<typeof header>(query, params, {
       // @ts-expect-error -- TODO fix the typing here
       header,
     })
-    console.log(data)
+    // console.log(header)
 
   return (
     <html lang="en">
@@ -63,11 +68,11 @@ export default function App() {
       </head>
       <body>
         <div className="">
-          <Header/>
+          <Header header = {header}/>
           <main>
             <Outlet />
           </main>
-          <Footer />
+          <Footer footer ={footer} />
         </div>
         <ScrollRestoration />
         <script

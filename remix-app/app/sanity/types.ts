@@ -34,4 +34,61 @@ export interface Header {
   }
 }
 
+export type Footer = {
+  promoHeading: string
+  footerLogo?: SanityImage
+  promoTextHeading: string
+  promoTextDescription: string
+  footerNav: FooterNavColumn[]
+  socialLinks: SocialLink[]
+  copyright: string
+  legalLinks: LegalLink[]
+}
+
+export type HeroSectionType = {
+  herosection: {
+    backgroundImage?: {
+      asset?: {
+        url: string;
+      };
+    };
+    badge?: string;
+    heading?: string;
+    features?: string[];
+    ctaText?: string;
+    ctaUrl?: string;
+  };
+};
+
+
+export type FooterNavColumn = {
+  title: string
+  links: FooterLink[]
+}
+
+export type FooterLink = {
+  label: string
+  url: string
+}
+
+export type SocialLink = {
+  platform: string
+  url: string
+}
+
+export type LegalLink = {
+  label: string
+  url: string
+}
+
+// If using Sanity's default image field
+export type SanityImage = {
+  _type: 'image'
+  asset: {
+    _ref: string
+    _type: 'reference'
+  }
+}
+
+
 export type AllSanitySchemaTypes ={Post: Post; Header: Header;}

@@ -1,73 +1,84 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
+let SlickSlider: any;
 
-const reviews = [
-    { text: "Easily, the best cup of coffee I’ve had.", author: "Justin S." },
-    { text: "Love how smooth and rich the flavor is!", author: "Emma R." },
-    { text: "This changed my morning routine forever.", author: "Daniel K." },
-];
+if (typeof window !== "undefined") {
+  SlickSlider = require("react-slick").default;
+}
 
-const HomeWorldwideReviewsSection = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+const HomeWorldwideReviewsSection = ({ testimonialsData }: any) => {
+  const { headline } = testimonialsData?.data?.testimonialSection || {};
+  const reviews = testimonialsData?.data?.testimonialSection?.testimonials || [];
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            nextSlide();
-        }, 4000);
-        return () => clearInterval(interval);
-    }, [currentIndex]);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    arrows: true,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 640, settings: { slidesToShow: 1 } },
+    ],
+  };
 
-    const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
-    };
+  if (typeof window === "undefined") {
+    return null; // or a fallback component
+  }
 
-    const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length);
-    };
+  return (
+    <section className="section home_worldwide_reviews">
+      <div className="container">
+        <div className="section__header">
+          <img
+            className="multi-column__image"
+            src="https://aeropress.com/cdn/shop/files/Frame_5_94fe7e27-38e7-4b3b-8371-716275b9029c_114x.svg?v=1726519438"
+            alt="Reviews Icon"
+          />
+          <h2 className="heading">{headline}</h2>
+        </div>
 
-    return (
-        <section className='section home_worldwide_reviews'>
-            <div className="container">
-                <div className="section__header">
-                    <img className='multi-column__image' 
-                         src="https://aeropress.com/cdn/shop/files/Frame_5_94fe7e27-38e7-4b3b-8371-716275b9029c_114x.svg?v=1726519438" 
-                         alt="Reviews Icon" />
-                    <h2 className="heading">Over 65,000 Five Star Reviews</h2>
+        <div className="worldwide_reviews_slider">
+          {SlickSlider && (
+            <SlickSlider {...settings}>
+              {reviews.map((item: any, index: number) => (
+                <div key={index} className="slide_item">
+                  <div className="full-content">
+                    <p>{item.quote}</p>
+                  </div>
+                  <span>{item.author}</span>
                 </div>
-                
-                <div className="worldwide_reviews_slider">
-                    <div className="slider_wrapper" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-                        {reviews.map((review, index) => (
-                            <div key={index} className="slide_item">
-                                <div className="full-content">
-                                    <p>“{review.text}”</p>
-                                </div>
-                                <span>{review.author}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-                <ul className="slick_slider_controls reviews_controls">
-                    <li className="slide-arrow prev-arrow" onClick={prevSlide}>
-                        <img
-                            src="https://aeropress.com/cdn/shop/t/409/assets/slide_arrow.svg?v=9251942861018786581741741796"
-                            width="59px"
-                            height="60px"
-                            alt="Previous Slide"
-                        />
-                    </li>
-                    <li className="slide-arrow next-arrow" onClick={nextSlide}>
-                        <img
-                            src="https://aeropress.com/cdn/shop/t/409/assets/slide_arrow.svg?v=9251942861018786581741741741796"
-                            width="59px"
-                            height="60px"
-                            alt="Next Slide"
-                        />
-                    </li>
-                </ul>
-            </div>
-        </section>
-    );
+              ))}
+            </SlickSlider>
+          )}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default HomeWorldwideReviewsSection;
+
+// Arrows
+const PrevArrow = ({ onClick }: any) => (
+  <img
+    src="https://aeropress.com/cdn/shop/t/409/assets/slide_arrow.svg?v=9251942861018786581741741796"
+    alt="Previous Slide"
+    className="custom-arrow prev-arrow"
+    onClick={onClick}
+  />
+);
+
+const NextArrow = ({ onClick }: any) => (
+  <img
+    src="https://aeropress.com/cdn/shop/t/409/assets/slide_arrow.svg?v=9251942861018786581741741796"
+    alt="Next Slide"
+    className="custom-arrow next-arrow"
+    onClick={onClick}
+  />
+);

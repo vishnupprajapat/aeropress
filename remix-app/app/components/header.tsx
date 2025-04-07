@@ -2,7 +2,15 @@ import { Link } from '@remix-run/react'
 import React from 'react'
 import { FiSearch } from "react-icons/fi";
 
-const Header = () => {
+interface HeaderProps {
+    header: any; // Replace 'any' with the actual type of 'header' if known
+}
+
+const Header: React.FC<HeaderProps> = ({ header }) => {
+    const headerLogoUrl  = header?.data?.headerlogo?.asset?.url || 'https://cdn.shopify.com/shopifycloud/web/assets/v1/7f0109d94c888a663452af48e2d324d7.svg';
+    const headerLogoAlt = header?.data?.headerlogo?.alt || 'Header Logo';
+    const headerLogoWidth = header?.data?.headerlogo?.asset?.metadata?.dimensions?.width || 100;
+    const headerLogoHeight = header?.data?.headerlogo?.asset?.metadata?.dimensions?.height || 100;
     return (
 
         <header className="header">
@@ -42,26 +50,17 @@ const Header = () => {
                             </button>
                         </div>
                         <ul className='header__linklist list--unstyled hidden-pocket hidden-lap'>
-                            <li className='header__linklist-item has-dropdown'>
-                                <Link to="/" className='header__linklist-link'>Coffee Makers</Link>
-                            </li>
-                            <li className='header__linklist-item has-dropdown'>
-                                <Link to="/accessories" className='header__linklist-link'>Accessories</Link>
-                            </li>
-                            <li className='header__linklist-item has-dropdown'>
-                                <Link to="/bundles" className='header__linklist-link'>Bundles & Gifts</Link>
-                            </li>
-                            <li className='header__linklist-item has-dropdown'>
-                                <Link to="/bundles" className='header__linklist-link'>Coffee</Link>
-
-                            </li>
-                            <li className='header__linklist-item has-dropdown'>
-                                <Link to="/bundles" className='header__linklist-link'>Why AeroPress</Link>
-                            </li>
+                            {header?.data?.menu?.map((item: any,key:number) => {
+                                return(
+                                    <li key={key} className='header__linklist-item has-dropdown'>
+                                    <Link to={item?.link} className='header__linklist-link'>{item?.name}</Link>
+                                </li>
+                                )
+                            })}
                         </ul>
                     </nav>
                     <div className="header__title">
-                        <img src="Logo.svg" alt="Logo" className="header__logo" />
+                        <img src={headerLogoUrl} alt={headerLogoAlt} width={headerLogoWidth} height={headerLogoWidth} className="header__logo" />
                     </div>
                     <div className="header__secondary-links">
                         <button

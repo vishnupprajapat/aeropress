@@ -1,132 +1,49 @@
-import { Link } from '@remix-run/react';
-import { useEffect, useState } from 'react';
+import React from "react";
+import { Link } from "@remix-run/react";
 
-const recipes = [
-    {
-        id: 1,
-        image: "https://aeropress.com/cdn/shop/articles/19_400x.png?v=1742916550",
-        title: "AeroPress Honey Lavender Ice Coffee",
-        description: "Floral, sweet, and easy to make, this iced coffee brings",
-        rating: 5,
-        reviews: 1,
-    },
-    {
-        id: 2,
-        image: "https://aeropress.com/cdn/shop/articles/15_400x.png?v=1742916486",
-        title: "AeroPress Honey Lavender Ice Coffee",
-        description: "Floral, sweet, and easy to make, this iced coffee brings",
-        rating: 5,
-        reviews: 1,
-    },
-    {
-        id: 3,
-        image: "https://aeropress.com/cdn/shop/articles/Untitled_960_x_640_px_5_400x.png?v=1742179343",
-        title: "AeroPress Honey Lavender Ice Coffee",
-        description: "Floral, sweet, and easy to make, this iced coffee brings",
-        rating: 5,
-        reviews: 1,
-    },
-    {
-        id: 4,
-        image: "https://aeropress.com/cdn/shop/articles/Irish_Cold_Brew_400x.png?v=1742179246",
-        title: "AeroPress Honey Lavender Ice Coffee",
-        description: "Floral, sweet, and easy to make, this iced coffee brings",
-        rating: 5,
-        reviews: 1,
-    },
-    {
-        id: 5,
-        image: "https://aeropress.com/cdn/shop/articles/Rose-latte-blog_400x.png?v=1740674963",
-        title: "AeroPress Honey Lavender Ice Coffee",
-        description: "Floral, sweet, and easy to make, this iced coffee brings",
-        rating: 5,
-        reviews: 1,
-    },
-    {
-        id: 6,
-        image: "https://aeropress.com/cdn/shop/articles/Pistachio_Martini_Resized_ec0639c6-6e82-46ae-8bea-d674d2d43367_400x.jpg?v=1740154474",
-        title: "AeroPress Honey Lavender Ice Coffee",
-        description: "Floral, sweet, and easy to make, this iced coffee brings",
-        rating: 5,
-        reviews: 1,
-    }
-    ,
-    {
-        id: 7,
-        image: "https://aeropress.com/cdn/shop/articles/Blog-resize-strawblatte_11c37c94-7db9-42f0-864b-a1ee5e0dc68f_400x.jpg?v=1743272763",
-        title: "AeroPress Honey Lavender Ice Coffee",
-        description: "Floral, sweet, and easy to make, this iced coffee brings",
-        rating: 5,
-        reviews: 1,
-    },
-    {
-        id: 8,
-        image: "https://aeropress.com/cdn/shop/articles/Pistachio_Honey_Latte-2_1_bbfcd053-a29a-4fed-b8fe-a21971dcde71_400x.jpg?v=1743272672",
-        title: "AeroPress Honey Lavender Ice Coffee",
-        description: "Floral, sweet, and easy to make, this iced coffee brings",
-        rating: 5,
-        reviews: 1,
-    },
-    {
-        id: 9,
-        image: "https://aeropress.com/cdn/shop/articles/Hugos_salted_caramel_espresso_martini_pic_1_400x.png?v=1743272714",
-        title: "AeroPress Honey Lavender Ice Coffee",
-        description: "Floral, sweet, and easy to make, this iced coffee brings",
-        rating: 5,
-        reviews: 1,
-    },
-    {
-        id: 10,
-        image: "https://aeropress.com/cdn/shop/articles/Espresso_Martini_with_Vanilla_Infusion_1_400x.png?v=1743272792",
-        title: "AeroPress Honey Lavender Ice Coffee",
-        description: "Floral, sweet, and easy to make, this iced coffee brings",
-        rating: 5,
-        reviews: 1,
-    }
+let SlickSlider: any;
+
+if (typeof window !== "undefined") {
+  SlickSlider = require("react-slick").default;
+}
+
+
+const BlogRecipeSlider = ({ recipes }: any) => {
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        arrows: true,
+        prevArrow: <PrevArrow />,
+        nextArrow: <NextArrow />,
+        responsive: [
+          { breakpoint: 1024, settings: { slidesToShow: 2 } },
+          { breakpoint: 640, settings: { slidesToShow: 1 } },
+        ],
+      };
     
-    
-];
-
-const BlogRecipeSlider = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentIndex((prevIndex) => (prevIndex === recipes.length - 1 ? 0 : prevIndex + 1));
-        }, 3000); // Change slide every 3 seconds
-        return () => clearInterval(interval);
-    }, []);
-
-    const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === 0 ? recipes.length - 1 : prevIndex - 1));
-    };
-
-    const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === recipes.length - 1 ? 0 : prevIndex + 1));
-    };
-
+    if (typeof window === "undefined") {
+        return null; // or a fallback component
+      }
     return (
         <div className="bottom-recipe-detail">
-            <div className="slider-recipe" style={{ position: 'relative', overflow: 'hidden' }}>
-                {recipes.map((recipe, index) => (
-                    <div 
-                        key={recipe.id} 
-                        className="recipe_tab_content" 
-                        style={{
-                            display: index === currentIndex ? 'block' : 'none',
-                            transition: 'opacity 0.5s ease-in-out'
-                        }}
-                    >
+            <SlickSlider {...settings} className="slider-recipe">
+                {recipes.map((recipe: any, index: number) => (
+                    <div key={index} className="recipe_tab_content">
                         <div className="border-with-recipe">
                             <Link to="/">
                                 <div className="slide-data-recipe">
-                                    <img src={recipe.image} alt={recipe.title} />
+                                    <img src={recipe.imageUrl} alt={recipe.title} />
                                     <div className="recipe-all-content">
                                         <div className="blog_review">
                                             <div className="rk_rating_wrapper">
                                                 <div className="rk_rating">
                                                     <div className="stars">
-                                                        {[...Array(recipe.rating)].map((_, index) => (
+                                                        {[...Array(Math.floor(recipe.rating))].map((_, index) => (
                                                             <span key={index} className="star is-selected">
                                                                 <svg
                                                                     width={12}
@@ -149,37 +66,44 @@ const BlogRecipeSlider = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <span className="review_title">{recipe.reviews} ({recipe.rating}.0)</span>
+                                            <span className="review_title">{recipe.reviews} ({recipe.rating})</span>
                                         </div>
+                                        {recipe.category && (
+                                            <div className="tag-list-recipe">
+                                                <p>{recipe.category}</p>
+                                            </div>
+                                        )}
                                         <p className="recipe-title">{recipe.title}</p>
                                         <p className="recipe-desc">{recipe.description}</p>
-                                        <span className="read_more">Read more</span>
+                                        <span className="read_more">{recipe.ctaText}</span>
                                     </div>
                                 </div>
                             </Link>
                         </div>
                     </div>
                 ))}
-            </div>
-            <ul className="slick_slider_controls reviews_controls">
-                <li className="slide-arrow prev-arrow" onClick={prevSlide}>
-                    <img
-                        src="https://aeropress.com/cdn/shop/t/409/assets/slide_arrow.svg?v=9251942861018786581741741796"
-                        width="59px"
-                        height="60px"
-                        alt="Previous Slide"
-                    />
-                </li>
-                <li className="slide-arrow next-arrow" onClick={nextSlide}>
-                    <img
-                        src="https://aeropress.com/cdn/shop/t/409/assets/slide_arrow.svg?v=9251942861018786581741741796"
-                        width="59px"
-                        height="60px"
-                        alt="Next Slide"
-                    />
-                </li>
-            </ul>
+            </SlickSlider>
         </div>
     );
 };
+
 export default BlogRecipeSlider;
+
+// Custom Arrows
+const PrevArrow = ({ onClick }: any) => (
+    <img
+      src="https://aeropress.com/cdn/shop/t/409/assets/slide_arrow.svg?v=9251942861018786581741741796"
+      alt="Previous Slide"
+      className="custom-arrow prev-arrow"
+      onClick={onClick}
+    />
+  );
+
+const NextArrow = ({ onClick }: any) => (
+    <img
+      src="https://aeropress.com/cdn/shop/t/409/assets/slide_arrow.svg?v=9251942861018786581741741796"
+      alt="Next Slide"
+      className="custom-arrow next-arrow"
+      onClick={onClick}
+    />
+  );
