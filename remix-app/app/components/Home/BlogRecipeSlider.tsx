@@ -55,11 +55,9 @@ const BlogRecipeSlider = ({ recipes }: any) => {
                                                 loading="lazy"
                                                 alt={recipe.title} />
                                             <div className="recipe-all-content">
-                                                <div className="blog_review">
-                                                    <div className="rk_rating_wrapper">
-                                                        <div className="rk_rating">
+                                                <div className="blog_review">                                
                                                             <div className="stars">
-                                                                {[...Array(Math.floor(recipe.rating))].map((_, index) => (
+                                                                {[...Array(Math.floor(5))].map((_, index) => (
                                                                     <span key={index} className="star is-selected">
                                                                         <svg
                                                                             width={12}
@@ -80,8 +78,6 @@ const BlogRecipeSlider = ({ recipes }: any) => {
                                                                     </span>
                                                                 ))}
                                                             </div>
-                                                        </div>
-                                                    </div>
                                                     <span className="review_title">{recipe.reviews} ({recipe.rating})</span>
                                                 </div>
                                                 {recipe.category && (
