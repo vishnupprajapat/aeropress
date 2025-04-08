@@ -22,7 +22,6 @@ import { Header as HeaderType,  } from './sanity/types';
 import { Footer as FooterType } from './sanity/types';
 import { useQuery } from '@sanity/react-loader';
 
-const LiveVisualEditing = lazy(() => import('~/components/LiveVisualEditing'))
 
 export const loader = async () => {
     const header = await loadQuery<HeaderType[]>(HEADER_QUERY)
@@ -44,9 +43,6 @@ export const links: LinksFunction = () => {
     {rel: 'stylesheet', href: styles},
   {rel: 'stylesheet', href: fontStyles},
   {rel: 'stylesheet', href: homeStyle},
-
-{ rel: "stylesheet",type:"text/css", href:"https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"},
-{ rel: "stylesheet",type:"text/css", href:"https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"}
   ]
 }
 
@@ -80,11 +76,6 @@ export default function App() {
             __html: `window.ENV = ${JSON.stringify(ENV)}`,
           }}
         />
-        {ENV.SANITY_STUDIO_STEGA_ENABLED ? (
-          <Suspense>
-            <LiveVisualEditing />
-          </Suspense>
-        ) : null}
         <Scripts />
         <LiveReload />
       </body>

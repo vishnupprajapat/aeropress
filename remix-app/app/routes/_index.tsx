@@ -1,17 +1,21 @@
-import { LinksFunction } from '@remix-run/node'
 import {useLoaderData, type MetaFunction} from '@remix-run/react'
+import { Links } from "@remix-run/react";
 import {useQuery} from '@sanity/react-loader'
 import Card from '~/components/Card'
 import Home from '~/components/Home'
-import Welcome from '~/components/Welcome'
 import {loadQuery} from '~/sanity/loader.server'
 import {HERO_BANNER_QUERY, HOME_COMPANY_REW_QUERY, HOME_REVIEWS_IMAGES_SECTION, HOW_DO_WE_STACK_UP_QUERY, POSTS_QUERY, PRODUCT_SECTION_QUERY, RECIPES_QUERY, TESTIMONIALS_QUERY, THREE_IN_ONE_TECH_QUERY} from '~/sanity/queries'
 import {HeroSectionType, Post} from '~/sanity/types'
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import slickStyles from "slick-carousel/slick/slick.css";
+import slickTheme from "slick-carousel/slick/slick-theme.css";
+import { LinksFunction } from '@remix-run/node';
 export const meta: MetaFunction = () => {
   return [{title: 'New Remix App'}]
 }
+export const links:LinksFunction = () => [
+  { rel: "stylesheet", href: slickStyles },
+  { rel: "stylesheet", href: slickTheme },
+];
 
 export const loader = async () => {
   const initial = await loadQuery<Post[]>(POSTS_QUERY)
@@ -40,6 +44,7 @@ export default function Index() {
 
   return (
     <section>
+      <Links />
       {data?.length ? (
         data.map((post, i) => (
           <Card key={post._id} post={post} encodeDataAttribute={encodeDataAttribute.scope([i])} />
