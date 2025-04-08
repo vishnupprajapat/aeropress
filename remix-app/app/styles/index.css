@@ -52,20 +52,22 @@
   --max-width-1: 768px;
 }
 
-html {
-  overflow-x: hidden;
-}
 
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 blockquote:first-child, ul:first-child, ol:first-child, p:first-child, h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
   margin-top: 0 !important;
 }
 blockquote:last-child, ul:last-child, ol:last-child, p:last-child, h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child {
   margin-bottom: 0 !important;
+}
+header.header {
+  position: sticky;
+  top: 0px;
+  background: #ffffff;
+  z-index: 6;
 }
 
 
