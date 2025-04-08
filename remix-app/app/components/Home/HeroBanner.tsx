@@ -1,11 +1,5 @@
 import { Link } from "@remix-run/react"
-import homeCss from "../../styles/home.css"
-import { LinksFunction } from '@remix-run/node'
-export const links: LinksFunction = () => {
-    return [
-        { rel: 'stylesheet', href: homeCss },
-    ]
-}
+import { stegaClean } from "@sanity/client/stega"
 const HeroBanner = ({HeroBannerData}:any) => {
     const herosectionImage =  HeroBannerData?.data.herosection?.backgroundImage?.asset?.url || "https://aeropress.com/cdn/shop/files/banner_img_1920x.jpg?v=1713528460"
     const badge = HeroBannerData?.data.herosection?.badge
@@ -25,9 +19,9 @@ const HeroBanner = ({HeroBannerData}:any) => {
                 <div className="announcement-bar__message text--xsmall">
                     <p>
                     <span className="message--stars">★ ★ ★ ★ ★</span> 
-                    {badge}</p>
+                    {stegaClean(badge)}</p>
                     </div>
-                    <h1 className="banner-heading">{heading}</h1>
+                    <h1 className="banner-heading">{stegaClean(heading)}</h1>
                     <div className="home-banner-list">
                         <ul>
                             {

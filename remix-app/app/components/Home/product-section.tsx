@@ -1,5 +1,8 @@
 import { Link } from '@remix-run/react'
 import React from 'react'
+import Image from './Image'
+import { urlFor } from '~/sanity/image'
+import { stegaClean } from '@sanity/client/stega'
 
 const ProductSection = ({ productData }: any) => {
     const productSectionTitle = productData?.data?.productSection?.title
@@ -15,8 +18,16 @@ const ProductSection = ({ productData }: any) => {
                     <div className="featured-collections">
                         <div className="product-list__inner ">
                             {product?.map((item: any, key: number) => {
-                                const image = item?.image?.asset?.url
-                                const hoverImage = item?.hoverImage?.asset?.url
+                                const imageUrl = item?.image?.asset?.url
+                                    const imageWidth = item?.image?.asset?.metadata?.dimensions?.width
+                                    const imageHeight = item?.image?.asset?.metadata?.dimensions?.height
+                                    const imageLqip = item?.image?.asset?.metadata?.lqip
+                                    const imageSrcSet = `${imageUrl} ${imageWidth}w, ${imageLqip} 1x`
+                                const hoverImageUrl = item?.hoverImage?.asset?.url
+                                    const hoverImageWidth = item?.hoverImage?.asset?.metadata?.dimensions?.width
+                                    const hoverImageHeight = item?.hoverImage?.asset?.metadata?.dimensions?.height
+                                    const hoverImageLqip = item?.hoverImage?.asset?.metadata?.lqip
+                                    const hoverImageSrcSet = `${hoverImageUrl} ${hoverImageWidth}w, ${hoverImageLqip} 1x`
                                 const title = item?.title
                                 const subtitle = item?.subtitle
                                 const price = item?.price
@@ -26,12 +37,20 @@ const ProductSection = ({ productData }: any) => {
                                     <div key={key} className="new-product-item">
                                         <div className="product-item ">
                                             <div className="product-item__image-wrapper product-item__image-wrapper--multiple">
-                                                <img className='product-item__primary-image ' src={image} />
-                                                <img className='product-item__secondary-image' src={hoverImage} />
+                                                <Image
+                                                 className='product-item__primary-image ' 
+                                                 src={urlFor(imageUrl).url()}
+                                                    srcSet={imageSrcSet}
+                                                    width={imageWidth}
+                                                    height={imageHeight}
+                                                    alt={title}
+                                                    loading="lazy"
+                                                  />
+                                                <img className='product-item__secondary-image' src={hoverImageUrl} />
                                             </div>
                                             <div className="product-item__info product-item__info--with-button ">
                                                 <div className="product-item-meta">
-                                                    <Link to="/" className="product-item-meta__title">{title}</Link>
+                                                    <Link to="/" className="product-item-meta__title">{stegaClean(title)}</Link>
                                                     <span className="hidden-phone">{subtitle}</span>
                                                     <div className="product-item-meta__price-list-container">
                                                         <span className='price'>{price}</span>

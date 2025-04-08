@@ -1,5 +1,7 @@
 import { Link } from '@remix-run/react'
+import { stegaClean } from '@sanity/client/stega'
 import React from 'react'
+import Image from './Image'
 
 const HomeReviewsImagesSection = ({homeReviewsImagesData}:any) => {
     const {tagline, title, products, ctaText, ctaLink} = homeReviewsImagesData.data.homeReviewsImagesSection
@@ -15,10 +17,21 @@ const HomeReviewsImagesSection = ({homeReviewsImagesData}:any) => {
                         {products.map((product:any, index:number) => {
                             const {image, title} = product
                             const imageUrl = image.asset.url
+                            const imageWidth = image.asset.metadata.dimensions.width || 500
+                            const imageHeight = image.asset.metadata.dimensions.height || 500
+                            const imageLqip = image.asset.metadata.lqip || "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                            const imageSrcSet = `${imageUrl} ${imageWidth}w, ${imageLqip} 1x`
                             return(
                                 <div key ={index} className="reviews_images_item">
-                                <img className='multi-column__image' src={imageUrl} alt="AeroPress Clear brewing after yoga_social photo @roamwithivan" />
-                                <div className="review_title">{title}</div>
+                                <Image 
+                                className='multi-column__image' 
+                                src={imageUrl}
+                                srcSet={imageSrcSet}
+                                width={imageWidth}
+                                height={imageHeight}
+                                loading="lazy"
+                                 alt={title} />
+                                <div className="review_title">{stegaClean(title)}</div>
                                 <span className="view_review_btn" data-id="review_tab_modal1">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"

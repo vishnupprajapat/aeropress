@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "@remix-run/react";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { urlFor } from "~/sanity/image";
+import { stegaClean } from "@sanity/client/stega";
+import Image from "./Image";
 let SlickSlider: any;
 
 if (typeof window !== "undefined") {
@@ -32,12 +36,26 @@ const BlogRecipeSlider = ({ recipes }: any) => {
     return (
         <div className="bottom-recipe-detail">
             <SlickSlider {...settings} className="slider-recipe">
-                {recipes.map((recipe: any, index: number) => (
-                    <div key={index} className="recipe_tab_content">
+                {recipes.map((recipe: any, index: number) => {
+                    console.log(recipe)
+                    const imageWidth = recipe.image?.asset?.metadata?.dimensions?.width || 500
+                    const imageHeight = recipe.image?.asset?.metadata?.dimensions?.height || 500
+                    const imageLqip = recipe.image?.asset?.metadata?.lqip || "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                    const imageUrl = urlFor(recipe.image).url()
+                    const imageSrcSet = `${imageUrl} ${imageWidth}w, ${imageLqip} 1x`
+
+                    return(
+                        <div key={index} className="recipe_tab_content">
                         <div className="border-with-recipe">
                             <Link to="/">
                                 <div className="slide-data-recipe">
-                                    <img src={recipe.imageUrl} alt={recipe.title} />
+                                    <Image 
+                                        src={imageUrl}
+                                        srcSet={imageSrcSet}
+                                        width={imageWidth}
+                                        height={imageHeight}
+                                        loading="lazy"
+                                        alt={recipe.title} />
                                     <div className="recipe-all-content">
                                         <div className="blog_review">
                                             <div className="rk_rating_wrapper">
@@ -70,18 +88,19 @@ const BlogRecipeSlider = ({ recipes }: any) => {
                                         </div>
                                         {recipe.category && (
                                             <div className="tag-list-recipe">
-                                                <p>{recipe.category}</p>
+                                                <p>{stegaClean(recipe.category)}</p>
                                             </div>
                                         )}
-                                        <p className="recipe-title">{recipe.title}</p>
-                                        <p className="recipe-desc">{recipe.description}</p>
-                                        <span className="read_more">{recipe.ctaText}</span>
+                                        <p className="recipe-title">{stegaClean(recipe.title)}</p>
+                                        <p className="recipe-desc">{stegaClean(recipe.description)}</p>
+                                        <span className="read_more">{stegaClean(recipe.ctaText)}</span>
                                     </div>
                                 </div>
                             </Link>
                         </div>
                     </div>
-                ))}
+                    )
+                })}
             </SlickSlider>
         </div>
     );

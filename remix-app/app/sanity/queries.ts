@@ -119,17 +119,38 @@ export const PRODUCT_SECTION_QUERY = groq`
       ctaText,
       image {
         asset -> {
-          url
+        url,
+        metadata {
+          lqip,
+          dimensions {
+            width,
+            height
+          }
+        }
         }
       },
       hoverImage {
         asset -> {
-          url
+        url,
+        metadata {
+          lqip,
+          dimensions {
+            width,
+            height
+          }
+        }
         }
       },
       variantImages[] {
         asset -> {
-          url
+        url,
+        metadata {
+          lqip,
+          dimensions {
+            width,
+            height
+          }
+        }
         }
       }
     }
@@ -149,7 +170,14 @@ export const HOW_DO_WE_STACK_UP_QUERY = groq`
       description,
       image {
         asset -> {
-          url
+        url,
+        metadata {
+          lqip,
+          dimensions {
+            width,
+            height
+          }
+        }
         }
       }
     }
@@ -166,14 +194,28 @@ export const THREE_IN_ONE_TECH_QUERY = groq`
     ctaLink,
     image {
       asset -> {
-        url
+        url,
+        metadata {
+          lqip,
+          dimensions {
+            width,
+            height
+          }
+        }
       }
     },
     features[] {
       label,
       icon {
         asset -> {
-          url
+          url,
+        metadata {
+          lqip,
+          dimensions {
+            width,
+            height
+          }
+        }
         }
       }
     }
@@ -210,7 +252,14 @@ export const  HOME_REVIEWS_IMAGES_SECTION = groq`
       title,
       image {
         asset -> {
-          url
+          url,
+        metadata {
+          lqip,
+          dimensions {
+            width,
+            height
+          }
+        }
         }
       }
     }
@@ -242,7 +291,18 @@ export const RECIPES_QUERY = groq`
       rating,
       reviews,
       category,
-      "imageUrl": image.asset->url
+      image {
+        asset -> {
+          url,
+        metadata {
+          lqip,
+          dimensions {
+            width,
+            height
+          }
+        }
+        }
+      }
     }
   }
 }

@@ -1,4 +1,7 @@
-import React from 'react'
+import { stegaClean } from '@sanity/client/stega'
+import React, { useState } from 'react'
+import { urlFor } from '~/sanity/image'
+import Image from './Image'
 
 const HowToCleanSection = ({steps,stepsTitle}:any) => {
   return (
@@ -12,13 +15,26 @@ const HowToCleanSection = ({steps,stepsTitle}:any) => {
                     {steps.map((step:any, index:number) => {
                         const {title, description, image} = step
                         const imageUrl = image?.asset?.url || "https://aeropress.com/cdn/shop/files/Pour_59ead110-03e0-4fcf-8921-924101cb46be_500x.png?v=1713529053"
+                        const imageWidth = image?.asset?.metadata?.dimensions?.width || 500
+                        const imageHeight = image?.asset?.metadata?.dimensions?.height || 500
+                        const imageLqip = image?.asset?.metadata?.lqip || "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                        const imageSrcSet = `${imageUrl} ${imageWidth}w, ${imageLqip} 1x`
                         return(
                             <div key={index} className="multi-column__item small ">
                             <div className="multi-column__image-wrapper">
-                                <img className='multi-column__image' src={imageUrl}/>
+                            <Image
+                                className="multi-column__image"
+                                src={urlFor(image).url()}
+                                srcSet={imageSrcSet }
+                                width={imageWidth}
+                                height={imageHeight}
+                                alt={stegaClean(title)}
+                                loading="lazy"
+                            />
+
                             </div>
                             <div className="multi-column__text-container text--center text-container">
-                                <p className="heading h5">{title}</p>
+                                <p className="heading h5">{stegaClean(title)}</p>
                                 <p><strong>{description}</strong></p>
                             </div>
                         </div>

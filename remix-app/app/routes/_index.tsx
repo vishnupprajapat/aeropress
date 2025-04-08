@@ -1,3 +1,4 @@
+import { LinksFunction } from '@remix-run/node'
 import {useLoaderData, type MetaFunction} from '@remix-run/react'
 import {useQuery} from '@sanity/react-loader'
 import Card from '~/components/Card'
@@ -6,7 +7,8 @@ import Welcome from '~/components/Welcome'
 import {loadQuery} from '~/sanity/loader.server'
 import {HERO_BANNER_QUERY, HOME_COMPANY_REW_QUERY, HOME_REVIEWS_IMAGES_SECTION, HOW_DO_WE_STACK_UP_QUERY, POSTS_QUERY, PRODUCT_SECTION_QUERY, RECIPES_QUERY, TESTIMONIALS_QUERY, THREE_IN_ONE_TECH_QUERY} from '~/sanity/queries'
 import {HeroSectionType, Post} from '~/sanity/types'
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 export const meta: MetaFunction = () => {
   return [{title: 'New Remix App'}]
 }

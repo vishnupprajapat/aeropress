@@ -1,8 +1,13 @@
 import React from 'react'
+import Image from './Image'
 
 const HomeTechnologySection = ({TechnologyData}:any) => {
     const {title,description,ctaText,ctaLink,image,features}=TechnologyData?.data?.technologySection
     const imageUrl = image?.asset?.url
+    const imageWidth = image?.asset?.metadata?.dimensions?.width || 500
+    const imageHeight = image?.asset?.metadata?.dimensions?.height || 500
+    const imageLqip = image?.asset?.metadata?.lqip || "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+    const imageSrcSet = `${imageUrl} ${imageWidth}w, ${imageLqip} 1x`
     return (
         <section className='section home_technology'>
             <div className="section__color-wrapper">
@@ -35,7 +40,14 @@ const HomeTechnologySection = ({TechnologyData}:any) => {
                         <div className="technology_right technology_item">
                             <div className="home_technology_block">
                                 <div className="multi-column__image">
-                                    <img src={imageUrl} alt="AeroPress clear Demo" />
+                                    <Image 
+                                    src={imageUrl}
+                                    srcSet={imageSrcSet}
+                                    width={imageWidth}
+                                    height={imageHeight}
+                                    loading="lazy"
+                                    alt={title}
+                                      />
                                     {features?.map((feature: any, index: number) => {
                                         const techClass = `tech-text${index + 1}`;
                                         const dataId = `technology_tab_modal${index + 1}`;
