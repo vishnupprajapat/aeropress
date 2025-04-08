@@ -1,18 +1,10 @@
 import { Link } from "@remix-run/react"
 import { stegaClean } from "@sanity/client/stega"
-import Image from "./Image"
 const HeroBanner = ({HeroBannerData}:any) => {
-    const imageUrl = HeroBannerData?.data.herosection?.backgroundImage?.asset?.url
+    const imageUrl = HeroBannerData?.data.herosection?.backgroundImage?.asset?.url || "https://cdn.sanity.io/images/n8l6ew8i/production/a08327a03de3344ce432d9ed401d6ba9606bafd6-1920x818.webp"
     const imageWidth = HeroBannerData?.data.herosection?.backgroundImage?.asset?.metadata?.dimensions?.width
     const imageHeight = HeroBannerData?.data.herosection?.backgroundImage?.asset?.metadata?.dimensions?.height
-    const imageLqip = HeroBannerData?.data.herosection?.backgroundImage?.asset?.metadata?.lqip
-    const imageSrcSet = `${imageUrl} ${imageWidth}w, ${imageLqip} 1x`
     const imageUrlForMobile = HeroBannerData?.data.herosection?.backgroundImageForMobile?.asset?.url
-    const imageWidthForMobile = HeroBannerData?.data.herosection?.backgroundImageForMobile?.asset?.metadata?.dimensions?.width
-    const imageHeightForMobile = HeroBannerData?.data.herosection?.backgroundImageForMobile?.asset?.metadata?.dimensions?.height
-    const imageLqipForMobile = HeroBannerData?.data.herosection?.backgroundImageForMobile?.asset?.metadata?.lqip
-    const imageSrcSetForMobile = `${imageUrlForMobile} ${imageWidthForMobile}w, ${imageLqipForMobile} 1x`
-
     const badge = HeroBannerData?.data.herosection?.badge
     const ctaText = HeroBannerData?.data.herosection?.ctaText
     const ctaUrl = HeroBannerData?.data.herosection?.ctaUrl
@@ -22,13 +14,11 @@ const HeroBanner = ({HeroBannerData}:any) => {
     return (
         <div className="home-banner">
             <div className="home-banner-image">
-                <Image 
+                <img 
                 className="desktop-image" 
                 src={imageUrl}
-                srcSet={imageSrcSet}
                 width={imageWidth}
                 height={imageHeight}
-                loading="lazy"
                 alt={stegaClean(heading)}
                 />
                 <img 
