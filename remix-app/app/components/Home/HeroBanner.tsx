@@ -1,7 +1,18 @@
 import { Link } from "@remix-run/react"
 import { stegaClean } from "@sanity/client/stega"
+import Image from "./Image"
 const HeroBanner = ({HeroBannerData}:any) => {
-    const herosectionImage =  HeroBannerData?.data.herosection?.backgroundImage?.asset?.url || "https://aeropress.com/cdn/shop/files/banner_img_1920x.jpg?v=1713528460"
+    const imageUrl = HeroBannerData?.data.herosection?.backgroundImage?.asset?.url
+    const imageWidth = HeroBannerData?.data.herosection?.backgroundImage?.asset?.metadata?.dimensions?.width
+    const imageHeight = HeroBannerData?.data.herosection?.backgroundImage?.asset?.metadata?.dimensions?.height
+    const imageLqip = HeroBannerData?.data.herosection?.backgroundImage?.asset?.metadata?.lqip
+    const imageSrcSet = `${imageUrl} ${imageWidth}w, ${imageLqip} 1x`
+    const imageUrlForMobile = HeroBannerData?.data.herosection?.backgroundImageForMobile?.asset?.url
+    const imageWidthForMobile = HeroBannerData?.data.herosection?.backgroundImageForMobile?.asset?.metadata?.dimensions?.width
+    const imageHeightForMobile = HeroBannerData?.data.herosection?.backgroundImageForMobile?.asset?.metadata?.dimensions?.height
+    const imageLqipForMobile = HeroBannerData?.data.herosection?.backgroundImageForMobile?.asset?.metadata?.lqip
+    const imageSrcSetForMobile = `${imageUrlForMobile} ${imageWidthForMobile}w, ${imageLqipForMobile} 1x`
+
     const badge = HeroBannerData?.data.herosection?.badge
     const ctaText = HeroBannerData?.data.herosection?.ctaText
     const ctaUrl = HeroBannerData?.data.herosection?.ctaUrl
@@ -11,8 +22,19 @@ const HeroBanner = ({HeroBannerData}:any) => {
     return (
         <div className="home-banner">
             <div className="home-banner-image">
-                <img className="desktop-image" src={herosectionImage} />
-                <img className="mobile-image" src="https://aeropress.com/cdn/shop/files/banner_mobile_img_j_360x.jpg?v=1713526818" />
+                <Image 
+                className="desktop-image" 
+                src={imageUrl}
+                srcSet={imageSrcSet}
+                width={imageWidth}
+                height={imageHeight}
+                loading="lazy"
+                alt={stegaClean(heading)}
+                />
+                <img 
+                className="mobile-image"
+                src={imageUrlForMobile}
+                alt={stegaClean(heading)} />
             </div>
             <div className="home-banner-content">
                 <div className="home-banner-content-warper">
@@ -27,7 +49,7 @@ const HeroBanner = ({HeroBannerData}:any) => {
                             {
                                 features?.map((item:any,key:number)=>{
                                     return(
-                                        <li key={key}><strong>{item}</strong></li>
+                                        <li key={key}><span>{item}</span></li>
                                     )
                                 })
                             }

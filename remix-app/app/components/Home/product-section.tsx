@@ -13,7 +13,7 @@ const ProductSection = ({ productData }: any) => {
             <div className="section-wrapper">
                 <div className="container ">
                     <div className="section__header ">
-                        <h2 className='heading h2'>{productSectionTitle}</h2>
+                        <h2 className='heading h2'>{stegaClean(productSectionTitle)}</h2>
                     </div>
                     <div className="featured-collections">
                         <div className="product-list__inner ">

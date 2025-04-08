@@ -39,7 +39,7 @@ export default defineType({
                 name: 'reviews',
                 title: 'reviews',
                 type: 'number',
-                validation: (Rule) => Rule.min(0).max(5),
+                validation: (Rule) => Rule.min(0).max(200),
               },
             {name: 'image', title: 'Image', type: 'image', options: {hotspot: true}},
             {name: 'category', title: 'Category', type: 'string'}, // hot, cold, featured, etc.

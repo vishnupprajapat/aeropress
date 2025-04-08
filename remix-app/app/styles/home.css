@@ -749,7 +749,7 @@ section.section.home_reviews_images .section__color-wrapper {
     width: 100%;
     text-align: center;
     position: relative;
-    padding: 0 13px;
+    padding: 0 0px;
 }
 .slider_wrapper {
     display: flex;
@@ -891,7 +891,6 @@ h2.mobile-heading {
 .slider-recipe .recipe_tab_content {
     padding: 0;
     list-style: none;
-    margin: 0 -12px;
     flex-wrap: wrap;
     display: none;
 }
@@ -954,6 +953,24 @@ h2.mobile-heading {
 }
 .border-with-recipe a{
     text-decoration: none;
+}
+.slick-dots{
+  display: block !important;
+  bottom: -10px;
+}
+.slick-dots li.slick-active button:before
+{
+    color: #a30a0a;
+}
+.slick-dots li button:before {
+  line-height: 30px !important;
+  width: 30px !important;
+  height: 30px !important;
+  font-size: 10px;
+}
+.slick-dots li button:hover:before, .slick-dots li button:focus:before {
+  opacity: 1;
+  color: #a30a0a;
 }
 p.recipe-title {
     font-family: 'Raleway';
@@ -1148,11 +1165,14 @@ img.custom-arrow.next-arrow {
 
 }
 .home_worldwide_reviews .container {
-  padding: 48px 0px;
+  padding: 48px 30px;
 }
 .worldwide_reviews_slider .full-content p {
   font-size: 18px;
   line-height: 22px;
+}
+.slick-list {
+  margin: 10px 98px !important;
 }
 }
 @media (max-width: 767px) {
@@ -1160,7 +1180,7 @@ img.custom-arrow.next-arrow {
     display: block;
   }
   .slick-list {
-    margin: 10px 44px !important;
+    margin: 10px 70px !important;
 }
 img.custom-arrow.next-arrow {
   right: 0px;
@@ -1184,6 +1204,12 @@ img.custom-arrow.prev-arrow {
   .home-banner-content-warper {
     max-width: 100%;
   }
+  .slick-dots li button:before {
+    line-height: 18px !important;
+    width: 18px !important;
+    height: 18px !important;
+    font-size: 8px;
+}
   .announcement-bar__message,
   .banner-heading,
   .home-banner-list {
@@ -1262,11 +1288,62 @@ img.custom-arrow.prev-arrow {
         grid-template-columns: repeat(2, 1fr);
         gap: 8px;
     }
+    .border-with-recipe{
+      padding: 0px;
+    }
+    .slide-data-recipe {
+      min-height: 350px;
+  }
+  img.custom-arrow.next-arrow, img.custom-arrow.prev-arrow {
+    width: 30px;
+}
+.tech-text1 {
+  left: 9%;
+  top: 38.9%;
+  max-width: 58px;
+}
+.technology_text {
+  font-size: 11px;
+}
+.tech-text1 span {
+  line-height: 14px;
+  margin-bottom: 6px;
+}
+.home_technology .technology_text img {
+  width: 38px;
+}
+.tech-text2 {
+  right: 9.6%;
+  top: 13.5%;
+  max-width: 95px;
+  text-align: left;
+}
+.technology_text {
+  line-height: 12.333px;
+}
+.tech-text3 {
+  right: 5.1%;
+  bottom: 43.4%;
+}
+.tech-text3:after {
+  width: 20px;
+  margin-left: 27%;
+  margin-top: 4%;
+}
+.tech-text2:after {
+  width: 100%;
+  transform: rotate(113deg);
+  margin-left: -76%;
+  margin-top: 44%;
+}
 }
 @media (max-width: 576px) {
   .product_option.color {
     display: none;
   }
+  .slide-data-recipe {
+    min-height: 311px;
+}
   .technology_right.technology_item {
     width: 415px;
 }
@@ -1283,7 +1360,7 @@ img.custom-arrow.prev-arrow {
     font-size: 12px;
   }
   .home_worldwide_reviews .container {
-    padding: 48px 0px;
+    padding: 25px 20px;
 }
 .home_aeropress_tabs ul.tabs{
     overflow-x: auto;
@@ -1294,10 +1371,18 @@ img.custom-arrow.prev-arrow {
     flex: 0 0 auto; /* Prevent items from shrinking */
     scroll-snap-align: start;
 }
+.slider-recipe .slick-dots {
+  display: block !important;
+  bottom: -30px;
+}
 }
 @media (max-width: 475px) {
 .technology_right.technology_item {
     width: 290px;
+}
+.slide-data-recipe {
+  min-height: 311px;
+  max-height: 270px;
 }
 }
 @media screen and (min-width: 741px) {

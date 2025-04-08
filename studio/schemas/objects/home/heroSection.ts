@@ -16,6 +16,14 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'backgroundImageForMobile',
+      title: 'Background Image for Mobile',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
       name: 'badge',
       title: 'Badge Text',
       type: 'string',

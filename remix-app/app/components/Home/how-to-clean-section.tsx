@@ -8,7 +8,7 @@ const HowToCleanSection = ({steps,stepsTitle}:any) => {
     <section className='section section--flush home-multi-3column how_to_clean_column'>
         <div className="container">
             <div className="section__header">
-                <h1 className="heading h2">{stepsTitle}</h1>
+                <h2 className="heading h2">{stegaClean(stepsTitle)}</h2>
             </div>
             <div className="multi-column multi-blocks-size4 multi-column--pocket-medium multi-column--medium multi-column--spacing-normal">
                 <div className="multi-column__inner multi-column__inner--center ">

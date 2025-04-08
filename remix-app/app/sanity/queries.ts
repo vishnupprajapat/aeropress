@@ -99,6 +99,19 @@ export const HERO_BANNER_QUERY = groq`
         }
       }
     },
+    backgroundImageForMobile {
+      asset -> {
+        _id,
+        url,
+        metadata {
+          lqip,
+          dimensions {
+            width,
+            height
+          }
+        }
+      }
+    },
     badge,
     heading,
     features,

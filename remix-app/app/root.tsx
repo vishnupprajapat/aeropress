@@ -1,7 +1,7 @@
 import {type LinksFunction, json} from '@remix-run/node'
 import styles from './styles/index.css'
 import fontStyles from './styles/fonts/font.css';
-import homeStyle from './styles/home.css';
+
 
 import {
   Link,
@@ -40,11 +40,16 @@ export const loader = async () => {
 
 export const links: LinksFunction = () => {
   return [
-    {rel: 'stylesheet', href: styles},
-  {rel: 'stylesheet', href: fontStyles},
-  {rel: 'stylesheet', href: homeStyle},
-  ]
-}
+    // Prefetch hint
+    { rel: "prefetch", as: "style", href: styles },
+    { rel: "prefetch", as: "style", href: fontStyles },
+
+    // Actual stylesheet
+    { rel: "stylesheet", href: styles },
+    { rel: "stylesheet", href: fontStyles },
+  ];
+};
+
 
 export default function App() {
   const {ENV,query ,header ,footer ,params} = useLoaderData<typeof loader>()
