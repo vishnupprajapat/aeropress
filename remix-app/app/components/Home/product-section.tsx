@@ -46,7 +46,7 @@ const ProductSection = ({ productData }: any) => {
                                                     alt={title}
                                                     loading="lazy"
                                                   />
-                                                <img className='product-item__secondary-image' src={hoverImageUrl} />
+                                                <img width={hoverImageWidth} height={hoverImageHeight} loading="lazy" className='product-item__secondary-image' src={hoverImageUrl} />
                                             </div>
                                             <div className="product-item__info product-item__info--with-button ">
                                                 <div className="product-item-meta">

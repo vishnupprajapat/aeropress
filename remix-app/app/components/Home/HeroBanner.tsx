@@ -24,7 +24,9 @@ const HeroBanner = ({HeroBannerData}:any) => {
                 <img 
                 className="mobile-image"
                 src={imageUrlForMobile}
-                alt={stegaClean(heading)} />
+                alt={stegaClean(heading)}
+                loading="lazy"
+                 />
             </div>
             <div className="home-banner-content">
                 <div className="home-banner-content-warper">
