@@ -1,3 +1,5 @@
+
+import { Link } from "@remix-run/react";
 import React, { useEffect, useState } from "react";
 
 let SlickSlider: any;
@@ -56,6 +58,11 @@ const HomeWorldwideReviewsSection = ({ testimonialsData }: any) => {
               ))}
             </SlickSlider>
           )}
+        </div>
+        <div className="button-wrapper">
+          <Link to="/" className="">
+            <span>Read All Reviews</span>
+          </Link>
         </div>
       </div>
     </section>

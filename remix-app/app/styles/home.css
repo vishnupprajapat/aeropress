@@ -717,6 +717,35 @@ section.section.home_reviews_images .section__color-wrapper {
 .slick-list {
   margin: 10px 121px !important;
 }
+.home_worldwide_reviews .button-wrapper{
+  max-width: 328px;
+  margin: 0 auto;
+}
+.home_worldwide_reviews .button-wrapper a {
+  background-color: #a30a0a !important;
+  white-space: nowrap;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  text-transform: capitalize;
+  display: table;
+  margin: 30px auto 0;
+  font-family: 'Raleway';
+  font-weight: 700;
+  position: relative;
+}
+.home_worldwide_reviews .button-wrapper a {
+  line-height: normal !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home_worldwide_reviews .button-wrapper a{
+  border-radius: 90px !important;
+  padding: 0 !important;
+    height: 48px;
+}
 
 .home_worldwide_reviews .container {
     padding: 48px 64px;
@@ -826,6 +855,21 @@ ul.slick_slider_controls {
 .blog-recipe-hp .container {
     padding: 0 64px;
     max-width: 1440px;
+}
+.all-recipe-link {
+  text-align: center;
+  margin-top: 32px;
+}
+.all-recipe-link a {
+  font-size: 16px;
+  line-height: 16px;
+  color: #a30a0a;
+  display: table;
+  margin: 0 auto;
+  font-weight: 700;
+  font-family:"Raleway";
+  text-transform: capitalize;
+  text-decoration: underline;
 }
 .blog-recipe-hp h2 {
     font-size: 40px;
@@ -1277,8 +1321,11 @@ img.custom-arrow.prev-arrow {
     .home_worldwide_reviews .section__header h2.heading {
         margin-top: 8px;
         margin-bottom: 10px !important;
-        line-height: 32px;
-        font-size: 30px;
+        line-height: 28px;
+        font-size: 28px;
+    }
+    .worldwide_reviews_slider .full-content p {
+      margin: 0px 0 12px !important;
     }
     .blog-recipe-hp .container {
         padding: 0px 10px;
@@ -1335,6 +1382,48 @@ img.custom-arrow.prev-arrow {
   transform: rotate(113deg);
   margin-left: -76%;
   margin-top: 44%;
+}
+.home_worldwide_reviews .button-wrapper a {
+  height: 35px;
+}
+.home_worldwide_reviews .button-wrapper a {
+  font-size: 14px;
+  margin: 20px auto 0;
+}
+.blog-recipe-hp h2 {
+  font-size: 28px;
+  line-height: 28px;
+  margin-bottom: 22px !important;
+}
+.blog-recipe-hp {
+  padding: 30px 0;
+}
+.home_reviews_images .button-wrapper a {
+  font-size: 14px;
+}
+.button-wrapper a {
+  height: 33px;
+  line-height: 33px;
+}
+h1.banner-heading {
+  line-height: 28px;
+}
+h1.banner-heading {
+  font-size: 28px;
+}
+.home-featured-collections .section__header {
+  margin-bottom: 22px;
+}
+.home-featured-collections h2.heading.h2 {
+  font-size: 28px;
+}
+.home_technology .section__header h2.heading {
+  line-height: 28px;
+  font-size: 28px;
+}
+.home_reviews_images .section__header h2.heading {
+  line-height: 28px;
+  font-size: 28px;
 }
 }
 @media (max-width: 576px) {

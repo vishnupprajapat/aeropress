@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import BlogRecipeSlider from './BlogRecipeSlider'
+import { Link } from '@remix-run/react';
 
 const BlogRecipe = ({ recipesData }: any) => {
     const { title, filters, recipes } = recipesData?.data?.blogRecipe
@@ -101,6 +102,9 @@ const BlogRecipe = ({ recipesData }: any) => {
                     </ul>
                 </div>
                 <BlogRecipeSlider recipes={recipes} />
+                <div className="all-recipe-link">
+                    <Link to="/blogs/aeropress-recipes">See All Recipes</Link>
+                </div>
             </div>
         </section>
     )
