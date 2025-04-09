@@ -58,24 +58,7 @@ const BlogRecipeSlider = ({ recipes }: any) => {
                                                 <div className="blog_review">                                
                                                             <div className="stars">
                                                                 {[...Array(Math.floor(5))].map((_, index) => (
-                                                                    <span key={index} className="star is-selected">
-                                                                        <svg
-                                                                            width={12}
-                                                                            height={13}
-                                                                            viewBox="0 0 12 13"
-                                                                            fill="none"
-                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                        >
-                                                                            <path
-                                                                                fillRule="evenodd"
-                                                                                clipRule="evenodd"
-                                                                                d="M5.92756 10.1041L2.44343 11.9354L3.10884 8.05659L0.290115 5.30961L4.18549 4.7437L5.92756 1.21466L7.66962 4.7437L11.565 5.30961L8.74628 8.05659L9.41168 11.9354L5.92756 10.1041Z"
-                                                                                fill="#ffd200"
-                                                                                stroke="#A30A0A"
-                                                                                strokeWidth="0.370393"
-                                                                            />
-                                                                        </svg>
-                                                                    </span>
+                                                                    <span key={index} className="star is-selected">★</span>
                                                                 ))}
                                                             </div>
                                                     <span className="review_title">{recipe.reviews} ({recipe.rating})</span>

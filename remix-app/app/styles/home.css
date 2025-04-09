@@ -1059,6 +1059,9 @@ p.recipe-desc {
   font-family: 'Raleway';
   font-weight: 600;
 }
+.blog_review .stars span.star {
+  color: #fbbc04;
+}
 img.custom-arrow.next-arrow ,img.custom-arrow.prev-arrow {
   width: 45px;
   bottom: 50%;
