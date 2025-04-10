@@ -2,6 +2,7 @@
   "name": "remix-app",
   "version": "1.0.0",
   "private": true,
+  "homepage": "http://aeropress.demo.cmsminds.net/aeropress",
   "sideEffects": false,
   "type": "module",
   "scripts": {

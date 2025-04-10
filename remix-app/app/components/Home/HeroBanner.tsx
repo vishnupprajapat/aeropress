@@ -19,6 +19,7 @@ const HeroBanner = ({HeroBannerData}:any) => {
                 src={imageUrl}
                 width={imageWidth}
                 height={imageHeight}
+                rel="preload"
                 alt={stegaClean(heading)}
                 />
                 <img 
