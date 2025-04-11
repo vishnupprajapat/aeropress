@@ -21,8 +21,7 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
                     </div>
                 </div>
             </div>
-            <header className="header">
-
+            <header className="header header--bordered">
                 <div className='container container-1440-64'>
                     <div className="header__wrapper">
                         <nav className="header__inline-navigation">

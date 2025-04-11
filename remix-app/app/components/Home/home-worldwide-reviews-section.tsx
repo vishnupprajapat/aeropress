@@ -1,4 +1,3 @@
-
 import { Link } from "@remix-run/react";
 import React, { useEffect, useState } from "react";
 
@@ -12,29 +11,43 @@ const HomeWorldwideReviewsSection = ({ testimonialsData }: any) => {
   const { headline } = testimonialsData?.data?.testimonialSection || {};
   const reviews = testimonialsData?.data?.testimonialSection?.testimonials || [];
 
+  const [autoplay, setAutoplay] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setAutoplay(true), 1000); // delayed autoplay
+    return () => clearTimeout(timer);
+  }, []);
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: autoplay,
     autoplaySpeed: 4000,
     arrows: true,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 640, settings: { slidesToShow: 1 } },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          arrows: false,
+          dots: false,
+        },
+      },
     ],
   };
 
-  if (typeof window === "undefined") {
-    return null; // or a fallback component
+  if (typeof window === "undefined" || reviews.length === 0) {
+    return null;
   }
 
   return (
-    <section className="section home_worldwide_reviews">
+    <section className="section home_worldwide_reviews" style={{ minHeight: "280px", overflow: "hidden" }}>
       <div className="container">
         <div className="section__header">
           <img
@@ -59,8 +72,9 @@ const HomeWorldwideReviewsSection = ({ testimonialsData }: any) => {
             </SlickSlider>
           )}
         </div>
+
         <div className="button-wrapper">
-          <Link to="/" className="">
+          <Link to="/">
             <span>Read All Reviews</span>
           </Link>
         </div>

@@ -174,8 +174,11 @@ button, [type=submit] {
 }
 .popover-button .img-icon img{
   width: 25px;
-  height: 25px;
+  height: 17px;
 
+}
+.header--bordered:not(.header--transparent) {
+  box-shadow: 0 1px rgb(167, 163, 160);
 }
 .header__logo{
   max-width: 135px;
