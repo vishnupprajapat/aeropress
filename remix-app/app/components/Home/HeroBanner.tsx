@@ -23,7 +23,7 @@ const HeroBanner = ({HeroBannerData}:any) => {
                     height={imageHeight}
                     rel="preload"
                     loading="eager"
-                    fetchPriority="high" 
+                    {...{ fetchpriority: 'high' } as any}
                     alt={stegaClean(heading)}
                 />
                 <img 
@@ -32,7 +32,7 @@ const HeroBanner = ({HeroBannerData}:any) => {
                     alt={stegaClean(heading)}
                     rel="preload"
                     loading="eager"
-                    fetchPriority="high" 
+                    {...{ fetchpriority: 'high' } as any}
                     width={imageWidthForMobile}
                     height={imageHeightForMobile}
                  />
