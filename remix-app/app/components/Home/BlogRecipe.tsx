@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { lazy, Suspense } from "react"; 
 import BlogRecipeSlider from './BlogRecipeSlider'
 import { Link } from '@remix-run/react';
 
@@ -26,7 +27,9 @@ const BlogRecipe = ({ recipesData }: any) => {
                         })}
                     </ul>
                 </div>
-                <BlogRecipeSlider recipes={recipes} />
+                <Suspense fallback={<div>Loading slider...</div>}>
+                   <BlogRecipeSlider recipes={recipes} />
+                </Suspense>
                 <div className="all-recipe-link">
                     <Link to="/blogs/aeropress-recipes">See All Recipes</Link>
                 </div>
