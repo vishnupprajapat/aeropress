@@ -1065,11 +1065,12 @@ p.recipe-desc {
 img.custom-arrow.next-arrow ,img.custom-arrow.prev-arrow {
   width: 45px;
   bottom: 50%;
+  cursor: pointer;
 }
 img.custom-arrow.prev-arrow {
   position: absolute;
   left: 54px;
-
+  rotate: 180deg;
 }
 
 img.custom-arrow.next-arrow {
