@@ -5,6 +5,8 @@ const HeroBanner = ({HeroBannerData}:any) => {
     const imageWidth = HeroBannerData?.data.herosection?.backgroundImage?.asset?.metadata?.dimensions?.width
     const imageHeight = HeroBannerData?.data.herosection?.backgroundImage?.asset?.metadata?.dimensions?.height
     const imageUrlForMobile = HeroBannerData?.data.herosection?.backgroundImageForMobile?.asset?.url
+    const imageWidthForMobile = HeroBannerData?.data.herosection?.backgroundImageForMobile?.asset?.metadata?.dimensions?.width
+    const imageHeightForMobile = HeroBannerData?.data.herosection?.backgroundImageForMobile?.asset?.metadata?.dimensions?.height
     const badge = HeroBannerData?.data.herosection?.badge
     const ctaText = HeroBannerData?.data.herosection?.ctaText
     const ctaUrl = HeroBannerData?.data.herosection?.ctaUrl
@@ -15,18 +17,24 @@ const HeroBanner = ({HeroBannerData}:any) => {
         <div className="home-banner">
             <div className="home-banner-image">
                 <img 
-                className="desktop-image" 
-                src={imageUrl}
-                width={imageWidth}
-                height={imageHeight}
-                rel="preload"
-                alt={stegaClean(heading)}
+                    className="desktop-image" 
+                    src={imageUrl}
+                    width={imageWidth}
+                    height={imageHeight}
+                    rel="preload"
+                    loading="eager"
+                    fetchPriority="high" 
+                    alt={stegaClean(heading)}
                 />
                 <img 
-                className="mobile-image"
-                src={imageUrlForMobile}
-                alt={stegaClean(heading)}
-                rel="preload"
+                    className="mobile-image"
+                    src={imageUrlForMobile}
+                    alt={stegaClean(heading)}
+                    rel="preload"
+                    loading="eager"
+                    fetchPriority="high" 
+                    width={imageWidthForMobile}
+                    height={imageHeightForMobile}
                  />
             </div>
             <div className="home-banner-content">

@@ -20,6 +20,17 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: slickStyles },
   { rel: "stylesheet", href: slickTheme },
   { rel: "stylesheet", href: homeStyle },
+  {
+    rel: "preload",
+    as: "image",
+    href: "https://cdn.sanity.io/images/n8l6ew8i/production/52bb6cd4304e5a17a9d6abd186a010dd9b73b27d-360x545.webp", 
+    media: "(max-width: 768px)" // only preload on mobile viewports
+  },
+  {
+    rel: "preconnect",
+    href: "https://cdn.sanity.io",
+    crossOrigin: "anonymous",
+  },
 ];
 export const loader = async () => {
   const initial = await loadQuery<Post[]>(POSTS_QUERY)
