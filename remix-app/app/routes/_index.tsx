@@ -17,10 +17,6 @@ export const meta: MetaFunction = () => {
   ]
 }
 export const links: LinksFunction = () => [
-  { rel: "preload", as: "style", href: slickStyles },
-  { rel: "preload", as: "style", href: slickTheme },
-  { rel: "preload", as: "style", href: homeStyle },
-
   { rel: "stylesheet", href: slickStyles },
   { rel: "stylesheet", href: slickTheme },
   { rel: "stylesheet", href: homeStyle },

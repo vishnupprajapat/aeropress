@@ -40,9 +40,6 @@ export const loader = async () => {
 
 export const links: LinksFunction = () => {
   return [
-    // Prefetch hint
-    { rel: "prefetch", as: "style", href: styles },
-    { rel: "prefetch", as: "style", href: fontStyles },
 
     // Actual stylesheet
     { rel: "stylesheet", href: styles },
