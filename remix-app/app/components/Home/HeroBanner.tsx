@@ -30,7 +30,6 @@ const HeroBanner = ({HeroBannerData}:any) => {
                     className="mobile-image"
                     src={imageUrlForMobile}
                     alt={stegaClean(heading)}
-                    rel="preload"
                     loading="eager"
                     {...{ fetchpriority: 'high' } as any}
                     width={imageWidthForMobile}
