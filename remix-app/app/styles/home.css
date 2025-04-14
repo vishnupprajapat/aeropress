@@ -466,6 +466,9 @@ section.section.home_aeropress_tabs .section__header {
   line-height: 20px;
   font-weight: 500;
 }
+.home_technology_block .button-wrapper{
+  display: none;
+}
 .home_technology .button-wrapper {
   text-align: center;
   margin-top: 21px;
@@ -1485,6 +1488,13 @@ h1.banner-heading {
 .home-company-rew .container {
   padding: 20px 0;
 }
+
+.technology_left .button-wrapper {
+      display: none;
+  }
+  .home_technology_block .button-wrapper{
+    display: block;
+  }
 
 }
 @media (max-width: 576px) {

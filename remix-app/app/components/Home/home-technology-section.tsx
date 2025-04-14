@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from './Image'
+import { stegaClean } from '@sanity/client/stega'
 
 const HomeTechnologySection = ({ TechnologyData }: any) => {
     const { title, description, ctaText, ctaLink, image, features } = TechnologyData?.data?.technologySection
@@ -16,26 +17,26 @@ const HomeTechnologySection = ({ TechnologyData }: any) => {
                         <div className="technology_left technology_item">
                             <div className="section__header">
                                 <h2 className="heading">{title}</h2>
-                                <div><p>{description}</p></div>
-                                <div className="button-wrapper">
-                                    <span className="video_popup_btn">
-                                        <svg
-                                            width={48}
-                                            height={49}
-                                            viewBox="0 0 48 49"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <circle cx={24} cy="24.4617" r="23.5" stroke="white" />
-                                            <path
-                                                d="M36.1384 22.9031L19.7639 12.7334C19.4879 12.5618 19.1717 12.4681 18.848 12.462C18.5244 12.4559 18.205 12.5376 17.9228 12.6988C17.6434 12.8574 17.4106 13.0887 17.2484 13.369C17.0862 13.6493 17.0005 13.9683 17 14.2934V34.6305C17.0021 35.1181 17.1948 35.5849 17.5358 35.9283C17.8768 36.2716 18.3381 36.4635 18.8184 36.4617C19.1536 36.4615 19.4823 36.3677 19.7685 36.1905L36.1384 26.0208C36.4015 25.8579 36.619 25.6291 36.7699 25.3563C36.9207 25.0836 37 24.776 37 24.4631C37 24.1502 36.9207 23.8426 36.7699 23.5699C36.619 23.2971 36.4015 23.0683 36.1384 22.9055V22.9031ZM18.8184 34.6086V14.3084L35.1644 24.462L18.8184 34.6086Z"
-                                                fill="white"
-                                            />
-                                        </svg>
-                                        <span>{ctaText}</span>
-                                    </span>
-                                </div>
+                                <div><p>{stegaClean(description)}</p></div>
                             </div>
+                            <div className="button-wrapper">
+                            <span className="video_popup_btn">
+                                <svg
+                                    width={48}
+                                    height={49}
+                                    viewBox="0 0 48 49"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <circle cx={24} cy="24.4617" r="23.5" stroke="white" />
+                                    <path
+                                        d="M36.1384 22.9031L19.7639 12.7334C19.4879 12.5618 19.1717 12.4681 18.848 12.462C18.5244 12.4559 18.205 12.5376 17.9228 12.6988C17.6434 12.8574 17.4106 13.0887 17.2484 13.369C17.0862 13.6493 17.0005 13.9683 17 14.2934V34.6305C17.0021 35.1181 17.1948 35.5849 17.5358 35.9283C17.8768 36.2716 18.3381 36.4635 18.8184 36.4617C19.1536 36.4615 19.4823 36.3677 19.7685 36.1905L36.1384 26.0208C36.4015 25.8579 36.619 25.6291 36.7699 25.3563C36.9207 25.0836 37 24.776 37 24.4631C37 24.1502 36.9207 23.8426 36.7699 23.5699C36.619 23.2971 36.4015 23.0683 36.1384 22.9055V22.9031ZM18.8184 34.6086V14.3084L35.1644 24.462L18.8184 34.6086Z"
+                                        fill="white"
+                                    />
+                                </svg>
+                                <span>{stegaClean(ctaText)}</span>
+                            </span>
+                        </div>
                         </div>
                         <div className="technology_right technology_item">
                             <div className="home_technology_block">
@@ -61,12 +62,12 @@ const HomeTechnologySection = ({ TechnologyData }: any) => {
                                             >
                                                 {index === 0 ? (
                                                     <>
-                                                        <span>{feature?.label}</span>
+                                                        <span>{stegaClean(feature?.label)}</span>
                                                         <img
                                                             src={iconUrl}
                                                             width="41px"
                                                             height="41px"
-                                                            alt={feature?.label || "icon"}
+                                                            alt={stegaClean(feature?.label) || "icon"}
                                                             loading="lazy"
                                                         />
                                                     </>
@@ -76,10 +77,10 @@ const HomeTechnologySection = ({ TechnologyData }: any) => {
                                                             src={iconUrl}
                                                             width="41px"
                                                             height="41px"
-                                                            alt={feature?.label || "icon"}
+                                                            alt={stegaClean(feature?.label) || "icon"}
                                                             loading="lazy"
                                                         />
-                                                        <span>{feature?.label}</span>
+                                                        <span>{stegaClean(feature?.label)}</span>
                                                     </>
                                                 )}
                                             </div>
@@ -87,6 +88,24 @@ const HomeTechnologySection = ({ TechnologyData }: any) => {
                                     })}
 
                                 </div>
+                                <div className="button-wrapper">
+                            <span className="video_popup_btn">
+                                <svg
+                                    width={48}
+                                    height={49}
+                                    viewBox="0 0 48 49"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <circle cx={24} cy="24.4617" r="23.5" stroke="white" />
+                                    <path
+                                        d="M36.1384 22.9031L19.7639 12.7334C19.4879 12.5618 19.1717 12.4681 18.848 12.462C18.5244 12.4559 18.205 12.5376 17.9228 12.6988C17.6434 12.8574 17.4106 13.0887 17.2484 13.369C17.0862 13.6493 17.0005 13.9683 17 14.2934V34.6305C17.0021 35.1181 17.1948 35.5849 17.5358 35.9283C17.8768 36.2716 18.3381 36.4635 18.8184 36.4617C19.1536 36.4615 19.4823 36.3677 19.7685 36.1905L36.1384 26.0208C36.4015 25.8579 36.619 25.6291 36.7699 25.3563C36.9207 25.0836 37 24.776 37 24.4631C37 24.1502 36.9207 23.8426 36.7699 23.5699C36.619 23.2971 36.4015 23.0683 36.1384 22.9055V22.9031ZM18.8184 34.6086V14.3084L35.1644 24.462L18.8184 34.6086Z"
+                                        fill="white"
+                                    />
+                                </svg>
+                                <span>{stegaClean(ctaText)}</span>
+                            </span>
+                        </div>
                             </div>
                         </div>
                     </div>
