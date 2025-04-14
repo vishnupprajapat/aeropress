@@ -1383,6 +1383,7 @@ img.custom-arrow.prev-arrow {
   }
   img.custom-arrow.next-arrow, img.custom-arrow.prev-arrow {
     width: 30px;
+    z-index: 5;
 }
 .tech-text1 {
   left: 9%;
