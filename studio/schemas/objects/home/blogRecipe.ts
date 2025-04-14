@@ -14,7 +14,24 @@ export default defineType({
       name: 'filters',
       title: 'Filters',
       type: 'array',
-      of: [{type: 'string'}],
+      of: [
+        defineArrayMember({
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'icon',
+              title: 'Icon',
+              type: 'image',
+              options: {hotspot: true},
+            }),
+            defineField({
+              name: 'label',
+              title: 'Label',
+              type: 'string',
+            }),
+          ],
+        }),
+      ],
       description: 'List of filter buttons like Featured, Hot, Cold, Popular',
     }),
     defineField({

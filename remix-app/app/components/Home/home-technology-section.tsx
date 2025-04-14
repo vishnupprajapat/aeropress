@@ -1,8 +1,8 @@
 import React from 'react'
 import Image from './Image'
 
-const HomeTechnologySection = ({TechnologyData}:any) => {
-    const {title,description,ctaText,ctaLink,image,features}=TechnologyData?.data?.technologySection
+const HomeTechnologySection = ({ TechnologyData }: any) => {
+    const { title, description, ctaText, ctaLink, image, features } = TechnologyData?.data?.technologySection
     const imageUrl = image?.asset?.url
     const imageWidth = image?.asset?.metadata?.dimensions?.width || 500
     const imageHeight = image?.asset?.metadata?.dimensions?.height || 500
@@ -40,35 +40,52 @@ const HomeTechnologySection = ({TechnologyData}:any) => {
                         <div className="technology_right technology_item">
                             <div className="home_technology_block">
                                 <div className="multi-column__image">
-                                    <Image 
-                                    src={imageUrl}
-                                    srcSet={imageSrcSet}
-                                    width={imageWidth}
-                                    height={imageHeight}
-                                    loading="lazy"
-                                    alt={title}
-                                      />
+                                    <Image
+                                        src={imageUrl}
+                                        srcSet={imageSrcSet}
+                                        width={imageWidth}
+                                        height={imageHeight}
+                                        loading="lazy"
+                                        alt={title}
+                                    />
                                     {features?.map((feature: any, index: number) => {
                                         const techClass = `tech-text${index + 1}`;
                                         const dataId = `technology_tab_modal${index + 1}`;
                                         const iconUrl = feature?.icon?.asset?.url;
+
                                         return (
                                             <div
-                                            key={index}
-                                            className={`${techClass} technology_text`}
-                                            data-id={dataId}
+                                                key={index}
+                                                className={`${techClass} technology_text`}
+                                                data-id={dataId}
                                             >
-                                            <span>{feature?.label}</span>
-                                            <img
-                                                src={iconUrl}
-                                                width="41px"
-                                                height="41px"
-                                                alt="Fast immersion"
-                                                loading="lazy"
-                                            />
+                                                {index === 0 ? (
+                                                    <>
+                                                        <span>{feature?.label}</span>
+                                                        <img
+                                                            src={iconUrl}
+                                                            width="41px"
+                                                            height="41px"
+                                                            alt={feature?.label || "icon"}
+                                                            loading="lazy"
+                                                        />
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <img
+                                                            src={iconUrl}
+                                                            width="41px"
+                                                            height="41px"
+                                                            alt={feature?.label || "icon"}
+                                                            loading="lazy"
+                                                        />
+                                                        <span>{feature?.label}</span>
+                                                    </>
+                                                )}
                                             </div>
                                         );
-                                        })}
+                                    })}
+
                                 </div>
                             </div>
                         </div>

@@ -27,7 +27,7 @@ const HeroBanner = ({ HeroBannerData }: any) => {
                     src={imageUrlForMobile}
                     alt={stegaClean(heading)}
                     loading="eager"
-                    fetchPriority="high"
+                    rel="preload"
                 />
             </div>
             <div className="home-banner-content">
