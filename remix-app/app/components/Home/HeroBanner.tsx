@@ -11,6 +11,8 @@ const HeroBanner = ({ HeroBannerData }: any) => {
     const heading = HeroBannerData?.data.herosection?.heading
     const features = HeroBannerData?.data.herosection?.features
 
+
+    
     return (
         <div className="home-banner">
             <div className="home-banner-image">
