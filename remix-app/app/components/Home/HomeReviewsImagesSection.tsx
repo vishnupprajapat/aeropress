@@ -1,7 +1,6 @@
 import { Link } from '@remix-run/react'
 import { stegaClean } from '@sanity/client/stega'
 import React from 'react'
-import Image from './Image'
 
 const HomeReviewsImagesSection = ({homeReviewsImagesData}:any) => {
     const {tagline, title, products, ctaText, ctaLink} = homeReviewsImagesData.data.homeReviewsImagesSection
@@ -23,10 +22,9 @@ const HomeReviewsImagesSection = ({homeReviewsImagesData}:any) => {
                             const imageSrcSet = `${imageUrl} ${imageWidth}w, ${imageLqip} 1x`
                             return(
                                 <div key ={index} className="reviews_images_item">
-                                <Image 
+                                <img
                                 className='multi-column__image' 
                                 src={imageUrl}
-                                srcSet={imageSrcSet}
                                 width={imageWidth}
                                 height={imageHeight}
                                 loading="lazy"

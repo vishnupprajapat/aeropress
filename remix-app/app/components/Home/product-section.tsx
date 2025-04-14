@@ -1,6 +1,5 @@
 import { Link } from '@remix-run/react'
 import React, { useEffect, useState } from 'react'
-import Image from './Image'
 import { urlFor } from '~/sanity/image'
 import { stegaClean } from '@sanity/client/stega'
 let SlickSlider: any;
@@ -91,10 +90,9 @@ const ProductSection = ({ productData }: any) => {
                                                             <span className="label label--custom new">new</span>
                                                         </div>
                                                     )}
-                                                    <Image
+                                                    <img
                                                         className='product-item__primary-image '
                                                         src={urlFor(imageUrl).url()}
-                                                        srcSet={imageSrcSet}
                                                         width={imageWidth}
                                                         height={imageHeight}
                                                         alt={title}

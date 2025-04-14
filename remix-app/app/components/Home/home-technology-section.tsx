@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from './Image'
 import { stegaClean } from '@sanity/client/stega'
 
 const HomeTechnologySection = ({ TechnologyData }: any) => {
@@ -42,9 +41,8 @@ const HomeTechnologySection = ({ TechnologyData }: any) => {
                         <div className="technology_right technology_item">
                             <div className="home_technology_block">
                                 <div className="multi-column__image">
-                                    <Image
+                                    <img
                                         src={imageUrl}
-                                        srcSet={imageSrcSet}
                                         width={imageWidth}
                                         height={imageHeight}
                                         loading="lazy"
