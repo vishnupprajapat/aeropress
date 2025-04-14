@@ -35,8 +35,6 @@ const HomeWorldwideReviewsSection = ({ testimonialsData }: any) => {
         breakpoint: 640,
         settings: {
           slidesToShow: 1,
-          arrows: false,
-          dots: false,
         },
       },
     ],

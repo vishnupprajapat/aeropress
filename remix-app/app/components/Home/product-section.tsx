@@ -1,13 +1,61 @@
 import { Link } from '@remix-run/react'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from './Image'
 import { urlFor } from '~/sanity/image'
 import { stegaClean } from '@sanity/client/stega'
+let SlickSlider: any;
+
+if (typeof window !== "undefined") {
+  SlickSlider = require("react-slick").default;
+}
+
 
 const ProductSection = ({ productData }: any) => {
     const productSectionTitle = productData?.data?.productSection?.title
     const compareText = productData?.data?.productSection?.compareText
     const product = productData?.data?.productSection?.products
+
+     const [autoplay, setAutoplay] = useState(false);
+    
+      useEffect(() => {
+        const timer = setTimeout(() => setAutoplay(true), 1000); // Delay autoplay to reduce layout shift
+        return () => clearTimeout(timer);
+      }, []);
+    
+      const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: autoplay,
+        autoplaySpeed: 4000,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2,
+            },
+          },
+          {
+            breakpoint: 640,
+            settings: {
+              slidesToShow: 2,
+            },
+          },
+          {
+            breakpoint: 445,
+            settings: {
+              slidesToShow: 1,
+
+            },
+          },
+        ],
+      };
+    
+      if (typeof window === "undefined" || productData.length === 0) {
+        return null;
+      }
     return (
         <section className='section home-featured-collections'>
             <div className="section-wrapper">
@@ -16,7 +64,8 @@ const ProductSection = ({ productData }: any) => {
                         <h2 className='heading h2'>{stegaClean(productSectionTitle)}</h2>
                     </div>
                     <div className="featured-collections">
-                        <div className="product-list__inner ">
+                        {SlickSlider && (
+                            <SlickSlider {...settings}  className="product-list__inner ">
                             {product?.map((item: any, key: number) => {
                                 const imageUrl = item?.image?.asset?.url
                                     const imageWidth = item?.image?.asset?.metadata?.dimensions?.width
@@ -38,14 +87,14 @@ const ProductSection = ({ productData }: any) => {
                                         <div className="product-item ">
                                             <div className="product-item__image-wrapper product-item__image-wrapper--multiple">
                                                 <Image
-                                                 className='product-item__primary-image ' 
-                                                 src={urlFor(imageUrl).url()}
+                                                className='product-item__primary-image ' 
+                                                src={urlFor(imageUrl).url()}
                                                     srcSet={imageSrcSet}
                                                     width={imageWidth}
                                                     height={imageHeight}
                                                     alt={title}
                                                     loading="lazy"
-                                                  />
+                                                />
                                                 <img width={hoverImageWidth} height={hoverImageHeight} loading="lazy" className='product-item__secondary-image' src={hoverImageUrl} />
                                             </div>
                                             <div className="product-item__info product-item__info--with-button ">
@@ -86,8 +135,8 @@ const ProductSection = ({ productData }: any) => {
                                     </div>
                                 )
                             })}
-
-                        </div>
+                        </SlickSlider>
+                        )}
                     </div>
                     <div className="collection_maker_btn">{compareText}</div>
                 </div>

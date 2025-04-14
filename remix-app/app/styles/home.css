@@ -102,18 +102,17 @@ h1.banner-heading {
   letter-spacing: 0;
 }
 .product-list__inner {
-  justify-content: safe center;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, calc(100% / 4 - 24px * (4 - 1) / 4));
-  grid-gap: 48px 24px;
-  gap: 48px 24px;
+ display: flex;
+ gap: 20px;
 }
+.product-list__inner .slick-slide> div{
+  padding: 0px 10px;
+}
+
 .featured-collections {
   padding-bottom: 20px;
 }
-.new-product-item {
-  padding: 0 16px;
-}
+
 .home-featured-collections .product-item {
   border-radius: 10px;
   border: 0.5px solid #e6e7e8;
@@ -566,6 +565,10 @@ section.section.home_aeropress_tabs .section__header {
 .home-company-rew .container {
     padding: 56px 0;
     max-width: 100%;
+    overflow: hidden;
+}
+.home-company-rew .slick-list {
+  margin: 10px 30px !important;
 }
 .home-company-rew .home-company-rew-warper {
     display: flex;
@@ -578,7 +581,7 @@ section.section.home_aeropress_tabs .section__header {
     align-items: center;
     padding: 32px 16px;
     height: 100%;
-    width: 372px;
+    width: 100%;
 }
 .home-company-rew-warper-item-image{
     max-width: 152px;
@@ -930,7 +933,7 @@ h2.mobile-heading {
     position: relative;
 }
 .slider-recipe {
-    margin-top: 32px;
+    margin-top: 32px ;
 }
 .slider-recipe .recipe_tab_content {
     padding: 0;
@@ -1132,11 +1135,11 @@ img.custom-arrow.next-arrow {
     }
   }
 @media (max-width: 999px) {
-  .product-list__inner {
+  /* .product-list__inner {
     grid-template-columns: repeat(auto-fit, calc(100% / 3 - 24px * (3 - 1) / 3));
     grid-gap: 32px 24px;
     gap: 32px 24px;
-  }
+  } */
 }
 @media (max-width: 1099px) {
   .home-banner-content {
@@ -1158,9 +1161,8 @@ img.custom-arrow.next-arrow {
     font-size: 34px;
   }
   .home-company-rew .home-company-rew-warper {
-    overflow-x: auto;
-    gap: 16px; /* Adjust spacing between elements */
-    scroll-snap-type: x mandatory;
+    gap: 16px; 
+
 }
 .home-company-rew-warper-item{
     
@@ -1281,11 +1283,11 @@ img.custom-arrow.prev-arrow {
   section.section.home_aeropress_tabs .container {
     padding: 42px 0px 34px;
   }
-  .product-list__inner {
+  /* .product-list__inner {
     grid-template-columns: repeat(auto-fit, calc(100% / 2 - 12px * (2 - 1) / 2));
     grid-gap: 32px 12px;
     gap: 32px 12px;
-  }
+  } */
   .home-featured-collections .container {
     padding: 32px 0px;
   }
@@ -1429,6 +1431,26 @@ h1.banner-heading {
   line-height: 28px;
   font-size: 28px;
 }
+.product-list__inner .slick-list {
+  margin: 10px 0px !important;
+}
+.product-list__inner .slick-list {
+  margin-bottom: 27px !important;
+}
+.collection_maker_btn {
+  margin-top: 10px;
+}
+.bottom-recipe-detail img.custom-arrow.next-arrow, .bottom-recipe-detail img.custom-arrow.prev-arrow {
+  width: 27px;
+  bottom: -32px;
+}
+.bottom-recipe-detail .slick-dots li {
+  margin: 0 2px;
+}
+.home-company-rew .container {
+  padding: 20px 0;
+}
+
 }
 @media (max-width: 576px) {
   .product_option.color {
@@ -1440,9 +1462,6 @@ h1.banner-heading {
   .technology_right.technology_item {
     width: 415px;
 }
-  .new-product-item {
-    padding: 0 0px;
-  }
   .home-multi-3column .container {
     padding: 40px 27px;
   }
@@ -1468,6 +1487,12 @@ h1.banner-heading {
   display: block !important;
   bottom: -30px;
 }
+.slider-recipe {
+  margin: 32px 32px;
+}
+.all-recipe-link {
+  margin-top: 12px;
+}
 }
 @media (max-width: 475px) {
 .technology_right.technology_item {
@@ -1477,6 +1502,13 @@ h1.banner-heading {
   min-height: 311px;
   max-height: 270px;
 }
+.bottom-recipe-detail .slick-list{
+  margin: 0px 0px !important;
+}
+.bottom-recipe-detail .slick-dots li {
+  margin: 0 0px;
+}
+
 }
 @media screen and (min-width: 741px) {
     .multi-column--spacing-normal {

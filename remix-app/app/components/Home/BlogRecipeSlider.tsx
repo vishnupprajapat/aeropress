@@ -40,8 +40,6 @@ const BlogRecipeSlider = ({ recipes }: any) => {
         breakpoint: 640,
         settings: {
           slidesToShow: 1,
-          arrows: false,
-          dots: false,
         },
       },
     ],
