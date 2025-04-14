@@ -75,6 +75,7 @@ header.header {
 .container {
   margin: 0 auto;
   max-width: 1520px;
+  overflow: hidden;
 }
 .container-1440-64 {
   max-width: 1440px;
@@ -411,7 +412,7 @@ p.footer__copyright {
 }
 @media(max-width: 1199px) {
 .container,.container-1440-64 {
-      padding:0 30px
+      padding:0 30px,
   }
 .header__inline-navigation {
     justify-content: flex-start;

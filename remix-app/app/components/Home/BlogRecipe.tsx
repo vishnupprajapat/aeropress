@@ -18,7 +18,6 @@ const BlogRecipe = ({ recipesData }: any) => {
                 <div className="center-recipe-tab">
                     <ul>
                         {filters.map((filter: any, key: number) => {
-                            console.log(filter.icon)
                             return (
                                 <li className={
                                     activeTab === key ? 'active' : ''
