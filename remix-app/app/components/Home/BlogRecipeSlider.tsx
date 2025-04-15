@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "@remix-run/react";
 import { urlFor } from "~/sanity/image";
 import { stegaClean } from "@sanity/client/stega";
+import Image from "./Image";
 
 let SlickSlider: any;
 
@@ -19,10 +20,10 @@ const BlogRecipeSlider = ({ recipes }: any) => {
 
   const settings = {
     dots: true,
-    infinite: true,
-    speed: 500,
+    infinite: false,
+    speed: 1000,
     slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToScroll: 4,
     autoplay: autoplay,
     autoplaySpeed: 4000,
     arrows: true,
@@ -57,14 +58,16 @@ const BlogRecipeSlider = ({ recipes }: any) => {
             const imageHeight = recipe.image?.asset?.metadata?.dimensions?.height || 500;
             const imageLqip = recipe.image?.asset?.metadata?.lqip || "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==";
             const imageUrl = urlFor(recipe.image).url();
+            const imageSrcSet = `${imageUrl} ${imageWidth}w, ${imageLqip} 1x`;
 
             return (
               <div key={index} className="recipe_tab_content">
                 <div className="border-with-recipe">
                   <Link to="/">
                     <div className="slide-data-recipe">
-                      <img
+                      <Image
                         src={imageUrl}
+                        srcSet={imageSrcSet}
                         width={imageWidth}
                         height={imageHeight}
                         loading="lazy"

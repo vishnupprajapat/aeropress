@@ -20,10 +20,10 @@ const HomeWorldwideReviewsSection = ({ testimonialsData }: any) => {
 
   const settings = {
     dots: true,
-    infinite: true,
-    speed: 500,
+    infinite: false,
+    speed: 1000,
     slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
     autoplay: autoplay,
     autoplaySpeed: 4000,
     arrows: true,
