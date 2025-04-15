@@ -336,7 +336,6 @@ section.section.home_aeropress_tabs .section__header {
 }
 .home_aeropress_tabs ul.tabs li span {
   line-height: 0.9;
-  margin-top: -4px;
 }
 .home_aeropress_tabs .tab_content {
   padding-top: 32px;
