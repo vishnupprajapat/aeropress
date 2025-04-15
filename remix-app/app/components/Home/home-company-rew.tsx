@@ -11,7 +11,7 @@ const HomeCompanyRew = ({ homeCompanyRewData }: any) => {
     const settings = {
         infinite: true,
         slidesToShow: 5,
-        slidesToScroll: 6,
+        slidesToScroll: 1,
         autoplay: true,
         speed: 10000,
         autoplaySpeed: 10000,

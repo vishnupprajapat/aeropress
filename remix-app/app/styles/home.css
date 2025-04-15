@@ -1247,6 +1247,13 @@ img.custom-arrow.next-arrow {
   padding-left: 6px;
   font-family: 'Raleway';
 }
+.product-item__info.product-item__info--with-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    min-height: 300px;
+}
 
 @media screen and (any-hover: hover) {
   .product-item__secondary-image {
