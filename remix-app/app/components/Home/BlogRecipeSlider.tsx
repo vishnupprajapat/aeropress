@@ -23,7 +23,7 @@ const BlogRecipeSlider = ({ recipes }: any) => {
     infinite: false,
     speed: 1000,
     slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToScroll: 1,
     autoplay: autoplay,
     autoplaySpeed: 4000,
     arrows: true,
@@ -34,12 +34,14 @@ const BlogRecipeSlider = ({ recipes }: any) => {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 2,
         },
       },
       {
         breakpoint: 640,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
     ],

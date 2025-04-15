@@ -34,18 +34,14 @@ const ProductSection = ({ productData }: any) => {
                 breakpoint: 1024,
                 settings: {
                     slidesToShow: 2,
-                },
-            },
-            {
-                breakpoint: 640,
-                settings: {
-                    slidesToShow: 2,
+                    slidesToScroll: 2,
                 },
             },
             {
                 breakpoint: 445,
                 settings: {
                     slidesToShow: 1,
+                    slidesToScroll: 1,
 
                 },
             },

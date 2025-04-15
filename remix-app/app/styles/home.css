@@ -103,7 +103,7 @@ font-family: "Raleway";
 font-weight: 500;
 font-size: 16px;
 color: #fff;
-padding: 2px 10px 6px;
+padding: 6px 10px 6px;
 border-radius: 4px;
 background: #167b7d;
 line-height: 16px;
@@ -1638,6 +1638,9 @@ h1.banner-heading {
   }
   .home_technology_block .button-wrapper{
     display: block;
+  }
+  .home-banner-list ul li {
+    padding: 0 7px 7px 18px !important;
   }
 
 }

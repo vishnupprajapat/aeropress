@@ -23,7 +23,7 @@ const HomeWorldwideReviewsSection = ({ testimonialsData }: any) => {
     infinite: false,
     speed: 1000,
     slidesToShow: 3,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     autoplay: autoplay,
     autoplaySpeed: 4000,
     arrows: true,
