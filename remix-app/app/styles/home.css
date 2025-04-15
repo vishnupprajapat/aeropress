@@ -1642,8 +1642,11 @@ h1.banner-heading {
 
 }
 @media (max-width: 576px) {
-  .product_option.color {
+  .product-details__size {
     display: none;
+  }
+  .product-item__info.product-item__info--with-button{
+    min-height: 135px;
   }
   .slide-data-recipe {
     min-height: 311px;
