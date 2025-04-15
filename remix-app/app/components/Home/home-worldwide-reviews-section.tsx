@@ -14,7 +14,7 @@ const HomeWorldwideReviewsSection = ({ testimonialsData }: any) => {
   const [autoplay, setAutoplay] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setAutoplay(true), 1000); // delayed autoplay
+    const timer = setTimeout(() => setAutoplay(true), 1000); 
     return () => clearTimeout(timer);
   }, []);
 

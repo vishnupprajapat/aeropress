@@ -1,7 +1,6 @@
 import { stegaClean } from '@sanity/client/stega'
 import React, { useEffect, useState } from 'react'
 import { urlFor } from '~/sanity/image'
-import Image from './Image'
 let SlickSlider: any;
 
 if (typeof window !== "undefined") {
@@ -61,10 +60,9 @@ const HowToCleanSection = ({steps,stepsTitle}:any) => {
                     return(
                         <div key={index} className="multi-column__item small ">
                         <div className="multi-column__image-wrapper">
-                        <Image
+                        <img
                             className="multi-column__image"
                             src={urlFor(image).url()}
-                            srcSet={imageSrcSet }
                             width={imageWidth}
                             height={imageHeight}
                             alt={stegaClean(title)}
