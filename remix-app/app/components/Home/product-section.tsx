@@ -23,10 +23,10 @@ const ProductSection = ({ productData }: any) => {
 
     const settings = {
         dots: true,
-        infinite: true,
-        speed: 500,
+        infinite: false,
+        speed: 1000,
         slidesToShow: 4,
-        slidesToScroll: 1,
+        slidesToScroll: 4,
         autoplay: autoplay,
         autoplaySpeed: 4000,
         responsive: [
