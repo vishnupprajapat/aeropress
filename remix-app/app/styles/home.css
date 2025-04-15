@@ -338,6 +338,123 @@ section.section.home_aeropress_tabs .section__header {
   line-height: 0.9;
   margin-top: -4px;
 }
+.home_aeropress_tabs .tab_content {
+  padding-top: 32px;
+}
+.tab_grid_content {
+  display: flex;
+  max-width: 925px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: center;
+}
+.home_aeropress_tabs .stackup_block{
+  width: 100%;
+}
+ .home_aeropress_tabs .tab_content ul.stackup_images, .product_grid{
+border-bottom: 0px;
+}
+.home_aeropress_tabs .tab_content ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  border-bottom: .6px solid #b5b7b9;
+}
+.home_aeropress_tabs .tab_content ul li {
+  width: 33.33%;
+  text-align: center;
+  color: #383738;
+  font-family: "Raleway";
+  font-weight: 500;
+  font-size: 24px;
+  line-height: normal;
+  padding: 14px;
+  text-transform: capitalize;
+}
+.home_aeropress_tabs .tab_content ul li:first-child, .home_aeropress_tabs .tab_content ul li:last-child {
+  font-size: 0;
+  text-align: center;
+  padding-left: 0;
+  width: 200px;
+  padding-right: 0;
+}
+.home_aeropress_tabs ul.stackup_images li{
+  border: 0;
+  padding-top: 0;
+}
+button.stackup_btn {
+  margin: 16px auto 32px;
+  display: table;
+  border-radius: 25px;
+  border: 1.25px solid #383738;
+  padding: 3px 12px 5px;
+  color: #383738;
+  font-size: 16px;
+  line-height: normal;
+  cursor: pointer;
+  overflow: visible;
+  background: none;
+  appearance: none;
+  touch-action: manipulation;
+}
+#showLess{
+  display: none;
+}
+button.stackup_btn.stackup_btn1 svg{
+  display: inline;
+  margin-left: 2px;
+}
+
+ul.stackup_images li:first-child img, ul.stackup_images li:last-child img {
+  max-width: 210px;
+  min-height: 35px;
+  max-height: 172px;
+  margin: 0 auto;
+  -o-object-fit: contain;
+  object-fit: contain;
+  width: 100%;
+}
+span.stackup_title {
+  color: #383738;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+  font-family: 'Raleway';
+  margin-top: 4px;
+  display: block;
+}
+.vd_image img{
+  max-width: 130px;
+}
+
+.stackup_block.stackup_block1 svg {
+  display: inline;
+}
+.home_aeropress_tabs .tab_content ul li:nth-child(2) {
+  padding: 16px 14px;
+  width: 460px;
+}
+.home_aeropress_tabs .tab_content ul li:nth-child(2) span {
+  margin-top: 0;
+  display: block;
+}
+
+.home_technology .button-wrapper a span, .window-os .home_aeropress_tabs .tab_content ul li:nth-child(2) span, .window-os button.discount-apply.button span {
+  margin-top: -5px;
+}
+
+
+
+
+
+
+
+
 
 /* how to clean section */
 
@@ -1250,6 +1367,23 @@ img.custom-arrow.next-arrow {
   margin: 10px 98px !important;
 }
 }
+@media (max-width: 768px) {
+  .tab_grid_content {
+    max-width: 600px;
+  }
+  span.stackup_title {
+    font-size: 20px;
+  }
+  .home_aeropress_tabs .tab_content ul li:nth-child(2) {
+    padding: 5px 12px;
+}
+.home_aeropress_tabs .tab_content ul li {
+  font-size: 20px;
+}
+.home_aeropress_tabs .tab_content ul li {
+  padding: 10px 0px;
+}
+}
 @media (max-width: 767px) {
   .mobile-image {
     display: block;
@@ -1543,11 +1677,31 @@ h1.banner-heading {
 .home-company-rew-warper-item {
   padding: 12px 16px;
 }
-
+.vd_image img {
+  max-width: 77px;
+}
+.tab_grid_content {
+  padding: 0px 20px;
+}
+span.stackup_title {
+  font-size: 13px;
+}
+.home_aeropress_tabs .tab_content ul li {
+  font-size: 16px;
+}
+.home_aeropress_tabs .tab_content ul li {
+  padding: 8px 0;
+}
+.stackup_block.stackup_block1 svg {
+  width: 24px;
+}
 }
 @media (max-width: 475px) {
 .technology_right.technology_item {
     width: 290px;
+}
+.vd_image img {
+  max-width: 50px;
 }
 .slide-data-recipe {
   min-height: 311px;
